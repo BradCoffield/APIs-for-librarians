@@ -26,6 +26,7 @@ Simple, right?
 #### JavaScript/jQuery
 
 ```javascript
+
 $.getJSON('https://lgapi-us.libapps.com/1.1/guides?site_id=foo1&key=foo2&status=1&subject_ids=38607', function (result) {
 
     var businessGuides = $.map(result, function (guidesData, index) {
@@ -34,9 +35,21 @@ $.getJSON('https://lgapi-us.libapps.com/1.1/guides?site_id=foo1&key=foo2&status=
         return listItem;
 
     });
+    // this part with the # is what is linking up to the HTML on your page - so the JS knows where to put your list of guides.
     $('#business-guides').html(businessGuides);
 });
 ```
+**Comments on the code:**
 
+* foo1 and foo2 are placeholders. Fill these in with the information provided by Springshare.
+* ```
+status=1
+``` refers to published guides.
+* ```
+subject_ids=38607
+``` refers to the specific code for the subject 'business' in our system. You'll need to replace that number.
+* As noted inside the code you'll need to adjust the ```
+#business-guides
+``` as appropriate for your site's code.
 
 
