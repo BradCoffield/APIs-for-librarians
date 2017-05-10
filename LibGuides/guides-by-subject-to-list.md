@@ -4,7 +4,7 @@
 
 The LibGuides API allows you to limit the API's response to return only guides of a certain subject. Subjects are defined inside of LG, as assigned by admins or guide authors to individual guides.
 
-Two nice implementations of this idea exist at [Rochester Institute of Technology's LG homepage](http://infoguides.rit.edu/) and at my library, [SFU Library](library.francis.edu) (under the heading 'Research Guides') My library's example is actually using the LG 'widget' which you can build from within the LG interface but the basic results are the same. Use the API call I'm detailing here if you want to end up with more control over syling your list.
+Two nice implementations of this idea exist at [Rochester Institute of Technology's LG homepage](http://infoguides.rit.edu/) and at my library, [SFU Library](library.francis.edu) - under the heading 'Research Guides'. (Note, my library's example is actually using the LG 'widget' which you can build from within the LG interface, but the basic results are the same. Use the API call I'm detailing here if you want to end up with more control over syling your list.) Also, credit to RIT for giving me this initial idea when I watched a webinar they participated in.
 
 ### More details
 
