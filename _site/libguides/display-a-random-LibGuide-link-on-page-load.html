@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Display a Random LibGuide Link on Page Load</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://use.fontawesome.com/b5b4f2ce2b.js"></script>
+    <link rel="stylesheet" href="/css/customfoundation.min.css">
+    <link href="/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/syntax.css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:300|Heebo:300|Martel:300|Raleway:300|Work+Sans:300" rel="stylesheet"> 
+
+    
+</head>
+
+<body>
+    <header>
+
+    <div class="expanded row" id="header-row">
+        <div class="medium-12 columns" >
+        
+            <h1 id="site-title"><span>APIs for Librarians</span></h1>
+            <div id="site-title-undertitle">Helping you to help yourself in helping your patrons. Or something.</div>
+            <div id="code-icon"><i class="fa fa-code" aria-hidden="true"></i></div>
+
+
+        </div>
+        
+       
+    </div>
+
+
+
+
+</header>
+
+
+ 
+
+    <div class="row">
+        <div class="medium-12 columns"> <h2 class="post-side-title">Display a Random LibGuide Link on Page Load</h2> <br> 
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-12 columns"><h2 id="description">Description</h2>
+
+<p>This code will pull a random guide from your system’s published guides and display it as a simple link. Also, there’s a button that will regenerate the randomized guide.</p>
+
+<h3 id="screenshot">Screenshot</h3>
+
+<p><img src="/assets/Display a Random LibGuide Link on Page Load-screenshot.jpg" alt="Display a Random LibGuide Link on Page Load screenshot" class="screenshot" /></p>
+
+<h3 id="more-details">More details</h3>
+<p>The API call, which is written in jQuery, will send your authorization key along with some pieces of information that will tell LG to only return JSON data about guides from a single subject or subjects.</p>
+
+<p>Once that data is returned we pull out the title of the guide and also its URL and place those pieces into a link element. The jQuery will then enumerate through each JSON entry doing the same thing again and again until complete. You might have a list of 3 items or 300, it doesn’t matter.</p>
+
+<p>You link up the jQuery and your actual HTML using a specific ID name in your HTML, assigned to an <code class="highlighter-rouge">&lt;a&gt;</code>.</p>
+
+<p>Pressing the button will re-run everything and display a new link.</p>
+
+<h2 id="the-code">The Code</h2>
+
+<h4 id="htmlcss">HTML/CSS</h4>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"foo"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">id=</span><span class="s">"btn"</span> <span class="na">value=</span><span class="s">"Click"</span> <span class="nt">/&gt;</span></code></pre></figure>
+
+<ul>
+  <li>Line 1: This shows the link.</li>
+  <li>Line 2: This generates the link which, when clicked, will re-roll the guide.</li>
+  <li>No CSS in the example.</li>
+</ul>
+
+<h4 id="javascriptjquery">JavaScript/jQuery</h4>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">(</span><span class="s1">'https://lgapi-us.libapps.com/1.1/guides?site_id=foo1&amp;key=foo2&amp;status=1'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">entry</span> <span class="o">=</span> <span class="nx">result</span><span class="p">[</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="nx">result</span><span class="p">.</span><span class="nx">length</span><span class="p">)];</span>
+      <span class="kd">var</span> <span class="nx">randomGuide</span> <span class="o">=</span> <span class="s1">'&lt;a href="'</span> <span class="o">+</span> <span class="nx">entry</span><span class="p">.</span><span class="nx">url</span> <span class="o">+</span> <span class="s1">'"&gt;'</span> <span class="o">+</span> <span class="nx">entry</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s1">'&lt;/a&gt;'</span><span class="p">;</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s1">'#foo'</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">randomGuide</span><span class="p">);</span>
+  <span class="p">});</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">"#btn"</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+        <span class="nx">$</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">(</span><span class="s1">'https://lgapi-us.libapps.com/1.1/guides?site_id=foo1&amp;key=foo2&amp;status=1'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">entry</span> <span class="o">=</span> <span class="nx">result</span><span class="p">[</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="nx">result</span><span class="p">.</span><span class="nx">length</span><span class="p">)];</span>
+            <span class="kd">var</span> <span class="nx">randomGuide</span> <span class="o">=</span> <span class="s1">'&lt;a href="'</span> <span class="o">+</span> <span class="nx">entry</span><span class="p">.</span><span class="nx">url</span> <span class="o">+</span> <span class="s1">'"&gt;'</span> <span class="o">+</span> <span class="nx">entry</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s1">'&lt;/a&gt;'</span><span class="p">;</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s1">'#foo'</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">randomGuide</span><span class="p">);</span>
+  <span class="p">});</span>  <span class="p">});</span>  <span class="p">});</span>
+ </code></pre></figure>
+
+<ul>
+  <li>Line 2: foo1 and foo2 are placeholders. Fill these in with the information provided by Springshare.</li>
+  <li>Line 2: <code class="highlighter-rouge">status=1</code> pulls JSON data for only your published guides.</li>
+  <li>Line 3: This is the randomizing part.</li>
+  <li>Line 4: Builds the actual link pulling in the url and name from the JSON data returned from the API call.</li>
+  <li>Line 5: Attaches to the <code class="highlighter-rouge">#foo</code> and places the link we’ve built.</li>
+  <li>Line 7: This is the beginning of what fuels the button which will regenerate the random link.</li>
+  <li>Lines 8-11: Essentially the same as the above.</li>
+</ul>
+</div>
+    </div>
+    
+
+
+
+
+
+
+
+    <footer>
+
+    <div class="row expanded">
+This site is licensed using the <a href="https://unlicense.org/">UNLICENSE</a>. Enjoy! <br>
+        Created and maintained by <a href="http://www.bradcoffield.com">Brad Coffield</a> <br>
+        <a href="mailto:bcoffield@gmail.com" class="fa fa-envelope"></a>
+        <a href="https://github.com/BradCoffield" class="fa fa-github"></a>
+        <a href="https://twitter.com/BradCoffield" class="fa fa-twitter"></a>
+
+
+    </div>
+
+
+</footer>
+
+</body>
+
+</html>
