@@ -24,7 +24,7 @@ title: 'APIs for Librarians'
 
                 {% for libguide in site.libguides %}
                 <li>
-                    <a href="{{ libguide.url}}">{{libguide.title}}</a>
+                    <a href="{{site.baseurl}}{{ libguide.url}}">{{libguide.title}}</a>
                 </li>
                 {% endfor %}
 
