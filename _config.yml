@@ -1,4 +1,4 @@
-#baseurl: /APIs-for-librarians
+baseurl: /APIs-for-librarians
 exclude: ['readme.md', 'license']
 title: 'APIs for Librarians'
 author: 'Brad Coffield'
