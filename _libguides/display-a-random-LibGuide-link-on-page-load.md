@@ -9,7 +9,7 @@ This code will pull a random guide from your system's published guides and displ
 
 ### Screenshot
 
-![{{page.title}} screenshot](/assets/{{page.title}}-screenshot.jpg){:.screenshot}
+![{{page.title}} screenshot]({{site.baseurl}}/assets/{{page.title}}-screenshot.jpg){:.screenshot}
 
        
 ### More details

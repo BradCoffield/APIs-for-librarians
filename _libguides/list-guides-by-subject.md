@@ -10,7 +10,7 @@ A nice implementation of this idea exists at [Rochester Institute of Technology'
 
 ### Screenshot
 
-![{{page.title}} screenshot](/assets/{{page.title}}-screenshot.jpg){:.screenshot}
+![{{page.title}} screenshot]({{site.baseurl}}/assets/{{page.title}}-screenshot.jpg){:.screenshot}
 
        
 ### More details
