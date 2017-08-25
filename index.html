@@ -4,25 +4,36 @@ title: 'APIs for Librarians'
 ---
 
 <div class="row">
-    <div class="medium-12 columns"><h2>Introduction</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure possimus quisquam dolore in aut molestiae nemo doloremque quod eveniet iusto? Ex possimus, perspiciatis, quia voluptas explicabo unde pariatur quisquam totam numquam tenetur culpa, at nihil excepturi odio veritatis mollitia cupiditate hic aspernatur, voluptates asperiores molestiae. Eaque numquam culpa rem deleniti.</p>
-    
+    <div class="medium-12 columns">
+        <h2>Introduction</h2>
+        <p>The goal of this site is to help librarians (coders and non-coders alike) quickly and easily make their web presences stronger by tapping into the wonderful world of APIs. There's a staggering amount of useful data offered to the world through APIs - whether it be from Springshare, OCLC, Twitter, even weather services (and many, many more). With some code you can pull, manipulate, and display useful data for your users.</p>
+
+        <p>This site is geared towards librarians who aren't web developers but who would like to enhance their LibGuides or library websites. If you are a coder, then you can perhaps skip over some of the documentation and copy the code right away.</p>
+
+        <p>This is a project in ongoing development. I hope to continually add new implementations. If you have used an API and would like to share your code on this site... great! Let me know.</p>
+
     </div>
-    <div class="medium-12 columns" id="homepage-implementations-column"><h2>Browse</h2><h3><i class="fa fa-code" aria-hidden="true"></i> LibGuides</h3><p>
-    
-    
-    <ul>
-  
-{% for libguide in site.libguides %}
-    <li>
-     <a href="{{ libguide.url}}">{{libguide.title}}</a>
-    </li>  
-{% endfor %}
+
+    <div class="medium-12 columns" id="homepage-implementations-column">
+        <h2>Browse</h2>
+        <h3><i class="fa fa-code" aria-hidden="true"></i> LibGuides</h3>
+        <p>
+
+
+            <ul>
+
+                {% for libguide in site.libguides %}
+                <li>
+                    <a href="{{ libguide.url}}">{{libguide.title}}</a>
+                </li>
+                {% endfor %}
 
 
 
-</ul></p></div>
+            </ul>
+        </p>
+    </div>
 </div>
-
 
 
 
