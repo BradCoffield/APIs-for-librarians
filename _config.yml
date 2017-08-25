@@ -9,7 +9,7 @@ personalhomepage: 'http://www.bradcoffield.com'
 #markdown: kramdown
 permalink: /:title.html
 collections:
-    libguides:   
-        output: true
+  libguides:   
+    output: true
 
         
