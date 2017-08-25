@@ -7,7 +7,6 @@ githuburl: 'https://github.com/BradCoffield'
 twitterurl: 'https://twitter.com/BradCoffield'
 personalhomepage: 'http://www.bradcoffield.com'
 #markdown: kramdown
-#highlighter: rouge
 permalink: /:title.html
 collections:
     libguides:   

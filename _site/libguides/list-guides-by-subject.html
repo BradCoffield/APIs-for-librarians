@@ -5,9 +5,9 @@
     <title>List Guides by Subject</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://use.fontawesome.com/b5b4f2ce2b.js"></script>
-    <link rel="stylesheet" href="/css/customfoundation.min.css">
-    <link href="/css/main.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/syntax.css">
+    <link rel="stylesheet" href="/APIs-for-librarians/css/customfoundation.min.css">
+    <link href="/APIs-for-librarians/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="/APIs-for-librarians/css/syntax.css">
     <link href="https://fonts.googleapis.com/css?family=Dosis:300|Heebo:300|Martel:300|Raleway:300|Work+Sans:300" rel="stylesheet"> 
 
     
@@ -64,20 +64,29 @@
 
 <h4 id="htmlcss">HTML/CSS</h4>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ul</span> <span class="na">id=</span><span class="s">"business-guides"</span><span class="nt">&gt;&lt;/ul&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nt">&lt;ul</span> <span class="na">id=</span><span class="s">"business-guides"</span><span class="nt">&gt;&lt;/ul&gt;</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Simple, right?</p>
 
 <h4 id="javascriptjquery">JavaScript/jQuery</h4>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">(</span><span class="s1">'https://lgapi-us.libapps.com/1.1/guides?site_id=foo1&amp;key=foo2&amp;status=1&amp;subject_ids=38607'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8</pre></td><td class="code"><pre><span class="nx">$</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">(</span><span class="s1">'https://lgapi-us.libapps.com/1.1/guides?site_id=foo1&amp;key=foo2&amp;status=1&amp;subject_ids=38607'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">businessGuides</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">result</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">guidesData</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">listItem</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'&lt;li&gt;&lt;/li&gt;'</span><span class="p">);</span>
     <span class="nx">$</span><span class="p">(</span><span class="s1">'&lt;a href=/"'</span> <span class="o">+</span> <span class="nx">guidesData</span><span class="p">.</span><span class="nx">url</span> <span class="o">+</span> <span class="s1">'/"&gt;'</span> <span class="o">+</span> <span class="nx">guidesData</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s1">'&lt;/a&gt;'</span><span class="p">).</span><span class="nx">appendTo</span><span class="p">(</span><span class="nx">listItem</span><span class="p">);</span>
     <span class="k">return</span> <span class="nx">listItem</span><span class="p">;</span>
   <span class="p">});</span>
   <span class="nx">$</span><span class="p">(</span><span class="s1">'#business-guides'</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">businessGuides</span><span class="p">);</span>
-<span class="p">});</span></code></pre></figure>
+<span class="p">});</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <h4 id="comments-on-the-code">Comments on the code:</h4>
 

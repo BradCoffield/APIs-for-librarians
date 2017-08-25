@@ -5,9 +5,9 @@
     <title>Display a Random LibGuide Link on Page Load</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://use.fontawesome.com/b5b4f2ce2b.js"></script>
-    <link rel="stylesheet" href="/css/customfoundation.min.css">
-    <link href="/css/main.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/syntax.css">
+    <link rel="stylesheet" href="/APIs-for-librarians/css/customfoundation.min.css">
+    <link href="/APIs-for-librarians/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="/APIs-for-librarians/css/syntax.css">
     <link href="https://fonts.googleapis.com/css?family=Dosis:300|Heebo:300|Martel:300|Raleway:300|Work+Sans:300" rel="stylesheet"> 
 
     
@@ -63,8 +63,10 @@
 
 <h4 id="htmlcss">HTML/CSS</h4>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"foo"</span><span class="nt">&gt;&lt;/div&gt;</span>
-<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">id=</span><span class="s">"btn"</span> <span class="na">value=</span><span class="s">"Click"</span> <span class="nt">/&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2</pre></td><td class="code"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"foo"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">id=</span><span class="s">"btn"</span> <span class="na">value=</span><span class="s">"Click"</span> <span class="nt">/&gt;</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <ul>
   <li>Line 1: This shows the link.</li>
@@ -74,7 +76,19 @@
 
 <h4 id="javascriptjquery">JavaScript/jQuery</h4>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13</pre></td><td class="code"><pre><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
     <span class="nx">$</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">(</span><span class="s1">'https://lgapi-us.libapps.com/1.1/guides?site_id=foo1&amp;key=foo2&amp;status=1'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
       <span class="kd">var</span> <span class="nx">entry</span> <span class="o">=</span> <span class="nx">result</span><span class="p">[</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="nx">result</span><span class="p">.</span><span class="nx">length</span><span class="p">)];</span>
       <span class="kd">var</span> <span class="nx">randomGuide</span> <span class="o">=</span> <span class="s1">'&lt;a href="'</span> <span class="o">+</span> <span class="nx">entry</span><span class="p">.</span><span class="nx">url</span> <span class="o">+</span> <span class="s1">'"&gt;'</span> <span class="o">+</span> <span class="nx">entry</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s1">'&lt;/a&gt;'</span><span class="p">;</span>
@@ -86,7 +100,8 @@
             <span class="kd">var</span> <span class="nx">randomGuide</span> <span class="o">=</span> <span class="s1">'&lt;a href="'</span> <span class="o">+</span> <span class="nx">entry</span><span class="p">.</span><span class="nx">url</span> <span class="o">+</span> <span class="s1">'"&gt;'</span> <span class="o">+</span> <span class="nx">entry</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s1">'&lt;/a&gt;'</span><span class="p">;</span>
             <span class="nx">$</span><span class="p">(</span><span class="s1">'#foo'</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">randomGuide</span><span class="p">);</span>
   <span class="p">});</span>  <span class="p">});</span>  <span class="p">});</span>
- </code></pre></figure>
+ <span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <ul>
   <li>Line 2: foo1 and foo2 are placeholders. Fill these in with the information provided by Springshare.</li>
