@@ -27,7 +27,7 @@ You link up the jQuery and your actual HTML using a specific ID name in your HTM
 
 #### HTML/CSS
 
-{% highlight html linenos %}
+{% highlight html %}
 <ul id="business-guides"></ul>
 {% endhighlight %}
 Simple, right?
@@ -35,7 +35,7 @@ Simple, right?
 #### JavaScript/jQuery
 
 
-{% highlight javascript linenos %}
+{% highlight javascript %}
 
 $.getJSON('https://lgapi-us.libapps.com/1.1/guides?site_id=foo1&key=foo2&status=1&subject_ids=38607', function (result) {
   var businessGuides = $.map(result, function (guidesData, index) {

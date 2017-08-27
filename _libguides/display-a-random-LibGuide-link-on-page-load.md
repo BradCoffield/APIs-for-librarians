@@ -26,7 +26,7 @@ Pressing the button will re-run everything and display a new link.
 
 #### HTML/CSS
 
-{% highlight html linenos %}
+{% highlight html %}
 <div id="foo"></div>
 <input type="button" id="btn" value="Click" />
 
@@ -39,7 +39,7 @@ Pressing the button will re-run everything and display a new link.
 #### JavaScript/jQuery
 
 
-{% highlight javascript linenos %}
+{% highlight javascript %}
 $(document).ready(function(){
     $.getJSON('https://lgapi-us.libapps.com/1.1/guides?site_id=foo1&key=foo2&status=1', function (result) {
       var entry = result[Math.floor(Math.random() * result.length)];
@@ -54,7 +54,7 @@ $(document).ready(function(){
   });  });  });
  {% endhighlight %}
 
-* Line 2: foo1 and foo2 are placeholders. Fill these in with the information provided by Springshare.
+* Line 2: ```foo1``` and ```foo2``` are placeholders. Fill these in with the information provided by Springshare.
 * Line 2: ```status=1``` pulls JSON data for only your published guides.
 * Line 3: This is the randomizing part.
 * Line 4: Builds the actual link pulling in the url and name from the JSON data returned from the API call.
