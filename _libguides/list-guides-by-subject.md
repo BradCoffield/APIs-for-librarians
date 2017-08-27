@@ -30,7 +30,6 @@ You link up the jQuery and your actual HTML using a specific ID name in your HTM
 {% highlight html %}
 <ul id="business-guides"></ul>
 {% endhighlight %}
-Simple, right?
 
 #### JavaScript/jQuery
 
