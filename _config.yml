@@ -6,10 +6,12 @@ author: 'Brad Coffield'
 githuburl: 'https://github.com/BradCoffield'
 twitterurl: 'https://twitter.com/BradCoffield'
 personalhomepage: 'http://www.bradcoffield.com'
-#markdown: kramdown
+markdown: kramdown
 permalink: /:title.html
 collections:
   libguides:   
+    output: true
+  libcal:
     output: true
 
         

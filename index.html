@@ -16,7 +16,8 @@ title: 'APIs for Librarians'
 
     <div class="medium-12 columns" id="homepage-implementations-column">
         <h2>Browse</h2>
-        <h3><i class="fa fa-code" aria-hidden="true"></i> LibGuides</h3>
+        <h3><i class="fa fa-code" aria-hidden="true"></i> SpringShare</h3>
+        <h4>LibGuides</h3>
         <p>
 
 
@@ -31,6 +32,18 @@ title: 'APIs for Librarians'
 
 
             </ul> 
+        </p>
+        <h4>LibCal</h4>
+        <p>
+            <ul>
+                 {% for libcals in site.libcal %}
+                <li>
+                    <a href="{{site.baseurl}}{{ libcals.url}}">{{libcals.title}}</a>
+                </li>
+                {% endfor %}
+ 
+            </ul>
+            
         </p>
     </div>
 </div>
