@@ -1,3 +1,12 @@
+.implementation{
+    text-align: center;
+}
+
+h3 {
+    margin:15px 0 !important;
+    text-align: center !important;
+}
+
 .highlight pre {
     background-color: lemonchiffon;
     border: 1px dotted teal;
@@ -45,7 +54,7 @@ p, ul, li { font-family: 'Martel', serif;}
 
 h2 {font-size: 2.5em;border-left: 5px solid teal;padding-left: .4em;}
 h3 {font-size: 2.0em;border-left: 3px solid teal;padding-left: .4em;}
-h4 {font-size: 1.75em;border-left: 1px dotted teal;padding-left: .4em;}
+h4 {font-size: 1.75em;/*border-left: 1px dotted teal;*/padding-left: .4em;}
 
 
 p {font-size: 1.3em;}

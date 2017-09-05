@@ -15,49 +15,68 @@ title: 'APIs for Librarians'
     </div>
 
     <div class="medium-12 columns" id="homepage-implementations-column">
-        <h2>Browse</h2>
-        <h3><i class="fa fa-code" aria-hidden="true"></i> SpringShare</h3>
-        <h4>LibGuides</h3>
-        <p>
+        <h2>Browse by Service</h2>
+        <h3><i class="fa fa-code" aria-hidden="true"></i> Springshare <i class="fa fa-code" aria-hidden="true"></i></h3>
+
+        <div class="row">
+            <div class="medium-6 large-4 columns implementation">
+                <h4>LibGuides</h4>
+                <p>
 
 
-            <ul>
+                    <ul>
 
-                {% for libguide in site.libguides %}
-                <li>
-                    <a href="{{site.baseurl}}{{ libguide.url}}">{{libguide.title}}</a>
-                </li>
-                {% endfor %}
+                        {% for libguide in site.libguides %}
+                        <li>
+                            <a href="{{site.baseurl}}{{ libguide.url}}">{{libguide.title}}</a>
+                        </li>
+                        {% endfor %}
 
 
 
-            </ul> 
-        </p>
-        <h4>LibCal</h4>
-        <p>
-            <ul>
-                 {% for libcals in site.libcal %}
-                <li>
-                    <a href="{{site.baseurl}}{{ libcals.url}}">{{libcals.title}}</a>
-                </li>
-                {% endfor %}
- 
-            </ul>
-            
-        </p>
-        
-          <h4>LibChat</h4>
-        <p>
-            <ul>
-                 {% for libchat in site.libanswers %}
-                <li>
-                    <a href="{{site.baseurl}}{{ libchat.url}}">{{libchat.title}}</a>
-                </li>
-                {% endfor %}
- 
-            </ul>
-            
-        </p>
+                    </ul>
+                </p>
+            </div>
+            <div class="medium-6 large-4 columns implementation">
+                <h4>LibCal</h4>
+                <p>
+                    <ul>
+                        {% for libcals in site.libcal %}
+                        <li>
+                            <a href="{{site.baseurl}}{{ libcals.url}}">{{libcals.title}}</a>
+                        </li>
+                        {% endfor %}
+
+                    </ul>
+
+                </p>
+    </div>
+          
+             <div class="medium-6 large-4 columns implementation">
+                <h4>LibAnswers &amp; LibChat</h4>
+                <p>
+                    <ul>
+                        {% for libchat in site.libanswers %}
+                        <li>
+                            <a href="{{site.baseurl}}{{ libchat.url}}">{{libchat.title}}</a>
+                        </li>
+                        {% endfor %}
+
+                    </ul>
+
+                </p>
+            </div>
+          
+          </div>
+     
+        </div>
+
+
+
+
+
+
+
     </div>
 </div>
 

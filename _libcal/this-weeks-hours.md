@@ -1,6 +1,6 @@
 ---
 layout: implementations
-title: "Display This Week's Hours"
+title: "This Week's Hours"
 ---
 ## Description
         
