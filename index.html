@@ -56,9 +56,9 @@ title: 'APIs for Librarians'
                 <h4>LibAnswers &amp; LibChat</h4>
                 <p>
                     <ul>
-                        {% for libchat in site.libanswers %}
+                        {% for libanswer in site.libanswers %}
                         <li>
-                            <a href="{{site.baseurl}}{{ libchat.url}}">{{libchat.title}}</a>
+                            <a href="{{site.baseurl}}{{ libanswer.url}}">{{libanswer.title}}</a>
                         </li>
                         {% endfor %}
 
