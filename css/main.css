@@ -4,8 +4,10 @@
 
 h3 {
     margin:15px 0 !important;
-    text-align: center !important;
+    
 }
+
+.service-titles {text-align: center !important;}
 
 .highlight pre {
     background-color: lemonchiffon;
