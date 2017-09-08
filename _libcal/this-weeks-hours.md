@@ -54,6 +54,8 @@ Our code finds the appropriate hours and pulls them out, makes them more present
     font-weight: bold;
 }{% endhighlight %}
 
+* You probably already have your fonts set. But those used in the screenshot are Dosis and Martel and they are available through Google Fonts.
+
 #### JavaScript/jQuery
 
 
