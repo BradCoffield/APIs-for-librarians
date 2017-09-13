@@ -13,8 +13,8 @@ The sliding is achieved using [Tiny Carousel](https://baijs.com/tinycarousel) by
 
 In production the slide is smoother than it appears in the GIF. It lost something in the conversion :)
 
-![{{page.title}} screenshot]({{site.baseurl}}/assets/{{page.title}}.gif){:.screenshot}
-
+<!--![{{page.title}} screenshot]({{site.baseurl}}/assets/{{page.title}}-screenshot.gif){:.screenshot}-->
+![{{page.title}} screenshot](https://raw.githubusercontent.com/BradCoffield/APIs-for-librarians/master/assets/Sliding%20FAQ%20display.gif){:.screenshot}
    
 ### More details
 The API call, which is written in jQuery, will send your institution ID to LibAnswers and get a response filled with FAQs (their questions, answers and other information). We pull the question itself and the URL and build a list with them all.
