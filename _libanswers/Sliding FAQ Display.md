@@ -13,7 +13,7 @@ The sliding is achieved using [Tiny Carousel](https://baijs.com/tinycarousel) by
 
 In production the slide is smoother than it appears in the GIF. It lost something in the conversion :)
 
-![{{page.title}} screenshot]({{site.baseurl}}/assets/{{page.title}}-screenshot.gif){:.screenshot}
+![{{page.title}} screenshot]({{site.baseurl}}/assets/{{page.title}}.gif){:.screenshot}
 
    
 ### More details
@@ -26,8 +26,7 @@ We cycle through all the results, pulling the parts we need and assembling them 
 #### HTML/CSS
 
 {% highlight html linenos %}
- 
-   <h3><a href="YOUR_LIBANSWERS_SYSTEM">Library FAQ</a></h3>
+  <h3><a href="YOUR_LIBANSWERS_SYSTEM">Library FAQ</a></h3>
    <div id="slider1">
     <div class="viewport">
         <ul id="foofoo" class="overview"></ul>
@@ -88,4 +87,4 @@ li a {text-decoration: none;}
 * Lines 3-8: Works to grab what we want from the returned JSON data and populates a ```<li>``` with it.
 * Line 9: Attaches the resulting set of list items to the HTML ID ```#foofoo```
 * Lines 10-13: Our Tiny Carousel options.
-* Line 22: All of Tiny Carousel. Take care to keep it after the code which is above it because our JSON items need to populate before Tiny Carousel activates.
+* Line 23: All of Tiny Carousel. Take care to keep it after the code which is above it because our JSON items need to populate before Tiny Carousel activates.
