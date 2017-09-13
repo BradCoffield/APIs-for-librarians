@@ -9,18 +9,18 @@ h3 {
 
 .service-titles {text-align: center !important;}
 
+/*
 .highlight pre {
-    background-color: lemonchiffon;
+    
     border: 1px dotted teal;
     color: inherit;
 }
+*/
 
-code {background-color: lemonchiffon;}
+ 
 
-.linenos {color: black;}
+.lineno, .linenos {padding:0 .5em;/*background: #333;*/border-right:1px #333 solid;}
 
-
-pre {white-space: pre-wrap}
 
 
 html {

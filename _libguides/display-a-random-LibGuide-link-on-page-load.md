@@ -26,7 +26,7 @@ Pressing the button will re-run everything and display a new link.
 
 #### HTML/CSS
 
-{% highlight html %}
+{% highlight html linenos %}
 <div id="foo"></div>
 <input type="button" id="btn" value="Click" />
 
@@ -39,7 +39,7 @@ Pressing the button will re-run everything and display a new link.
 #### JavaScript/jQuery
 
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
 $(document).ready(function(){
     $.getJSON('https://lgapi-us.libapps.com/1.1/guides?site_id=foo1&key=foo2&status=1', function (result) {
       var entry = result[Math.floor(Math.random() * result.length)];

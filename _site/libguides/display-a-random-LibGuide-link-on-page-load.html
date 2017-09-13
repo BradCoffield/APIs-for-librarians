@@ -8,13 +8,28 @@
     <link rel="stylesheet" href="/css/customfoundation.min.css">
     <link href="/css/main.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/syntax.css">
-<<<<<<< Updated upstream
   <link href="https://fonts.googleapis.com/css?family=Dosis:300|Martel:300" rel="stylesheet"> 
-=======
-    <link href="https://fonts.googleapis.com/css?family=Dosis:300|Heebo:300|Martel:300|Raleway:300|Work+Sans:300" rel="stylesheet"> 
->>>>>>> Stashed changes
 
     
+
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//ashleykunsa.com/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+
+
 </head>
 
 <body>
@@ -59,7 +74,7 @@
 
 <p>Once that data is returned we pull out the title of the guide and also its URL and place those pieces into a link element. The jQuery will then enumerate through each JSON entry doing the same thing again and again until complete. You might have a list of 3 items or 300, it doesn’t matter.</p>
 
-<p>You link up the jQuery and your actual HTML using a specific ID name in your HTML, assigned to an <code>&lt;a&gt;</code>.</p>
+<p>You link up the jQuery and your actual HTML using a specific ID name in your HTML, assigned to an <code class="highlighter-rouge">&lt;a&gt;</code>.</p>
 
 <p>Pressing the button will re-run everything and display a new link.</p>
 
@@ -67,13 +82,10 @@
 
 <h4 id="htmlcss">HTML/CSS</h4>
 
-<<<<<<< Updated upstream
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"foo"</span><span class="nt">&gt;&lt;/div&gt;</span>
-<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">id=</span><span class="s">"btn"</span> <span class="na">value=</span><span class="s">"Click"</span> <span class="nt">/&gt;</span></code></pre></figure>
-=======
-<figure class="highlight"><pre><code class="language-html" data-lang="html">&lt;div id=&quot;foo&quot;&gt;&lt;/div&gt;
-&lt;input type=&quot;button&quot; id=&quot;btn&quot; value=&quot;Click&quot; /&gt;</code></pre></figure>
->>>>>>> Stashed changes
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2</pre></td><td class="code"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"foo"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">id=</span><span class="s">"btn"</span> <span class="na">value=</span><span class="s">"Click"</span> <span class="nt">/&gt;</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <ul>
   <li>Line 1: This shows the link.</li>
@@ -83,8 +95,19 @@
 
 <h4 id="javascriptjquery">JavaScript/jQuery</h4>
 
-<<<<<<< Updated upstream
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13</pre></td><td class="code"><pre><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
     <span class="nx">$</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">(</span><span class="s1">'https://lgapi-us.libapps.com/1.1/guides?site_id=foo1&amp;key=foo2&amp;status=1'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
       <span class="kd">var</span> <span class="nx">entry</span> <span class="o">=</span> <span class="nx">result</span><span class="p">[</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="nx">result</span><span class="p">.</span><span class="nx">length</span><span class="p">)];</span>
       <span class="kd">var</span> <span class="nx">randomGuide</span> <span class="o">=</span> <span class="s1">'&lt;a href="'</span> <span class="o">+</span> <span class="nx">entry</span><span class="p">.</span><span class="nx">url</span> <span class="o">+</span> <span class="s1">'"&gt;'</span> <span class="o">+</span> <span class="nx">entry</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s1">'&lt;/a&gt;'</span><span class="p">;</span>
@@ -96,32 +119,15 @@
             <span class="kd">var</span> <span class="nx">randomGuide</span> <span class="o">=</span> <span class="s1">'&lt;a href="'</span> <span class="o">+</span> <span class="nx">entry</span><span class="p">.</span><span class="nx">url</span> <span class="o">+</span> <span class="s1">'"&gt;'</span> <span class="o">+</span> <span class="nx">entry</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s1">'&lt;/a&gt;'</span><span class="p">;</span>
             <span class="nx">$</span><span class="p">(</span><span class="s1">'#foo'</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">randomGuide</span><span class="p">);</span>
   <span class="p">});</span>  <span class="p">});</span>  <span class="p">});</span>
- </code></pre></figure>
+ <span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <ul>
   <li>Line 2: <code class="highlighter-rouge">foo1</code> and <code class="highlighter-rouge">foo2</code> are placeholders. Fill these in with the information provided by Springshare.</li>
   <li>Line 2: <code class="highlighter-rouge">status=1</code> pulls JSON data for only your published guides.</li>
-=======
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">$(document).ready(function(){
-    $.getJSON(&#39;https://lgapi-us.libapps.com/1.1/guides?site_id=foo1&amp;key=foo2&amp;status=1&#39;, function (result) {
-      var entry = result[Math.floor(Math.random() * result.length)];
-      var randomGuide = &#39;&lt;a href=&quot;&#39; + entry.url + &#39;&quot;&gt;&#39; + entry.name + &#39;&lt;/a&gt;&#39;;
-      $(&#39;#foo&#39;).html(randomGuide);
-  });
-    $(&quot;#btn&quot;).click(function(){
-        $.getJSON(&#39;https://lgapi-us.libapps.com/1.1/guides?site_id=foo1&amp;key=foo2&amp;status=1&#39;, function (result) {
-            var entry = result[Math.floor(Math.random() * result.length)];
-            var randomGuide = &#39;&lt;a href=&quot;&#39; + entry.url + &#39;&quot;&gt;&#39; + entry.name + &#39;&lt;/a&gt;&#39;;
-            $(&#39;#foo&#39;).html(randomGuide);
-  });  });  });</code></pre></figure>
-
-<ul>
-  <li>Line 2: <code>foo1</code> and <code>foo2</code> are placeholders. Fill these in with the information provided by Springshare.</li>
-  <li>Line 2: <code>status=1</code> pulls JSON data for only your published guides.</li>
->>>>>>> Stashed changes
   <li>Line 3: This is the randomizing part.</li>
   <li>Line 4: Builds the actual link pulling in the url and name from the JSON data returned from the API call.</li>
-  <li>Line 5: Attaches to the <code>#foo</code> and places the link we’ve built.</li>
+  <li>Line 5: Attaches to the <code class="highlighter-rouge">#foo</code> and places the link we’ve built.</li>
   <li>Line 7: This is the beginning of what fuels the button which will regenerate the random link.</li>
   <li>Lines 8-11: Essentially the same as the above.</li>
 </ul>

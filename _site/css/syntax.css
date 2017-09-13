@@ -1,7 +1,7 @@
 .highlight {
-  white-space: pre;
-  overflow: auto;
-  word-wrap: normal; /* horizontal scrolling */
+  
+    
+  /*word-wrap: normal;*/ /* horizontal scrolling */
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -9,7 +9,14 @@
   padding-left: 10px;
   background: #202020;
   color: #C1C2C3;
+white-space: pre;
+  overflow-x: auto;
+  word-break: inherit;
+  word-wrap: inherit;
+
 }
+
+
 
 
 .highlight .hll { background-color: #202020 }

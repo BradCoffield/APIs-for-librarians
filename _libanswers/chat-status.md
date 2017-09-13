@@ -25,14 +25,14 @@ SpringShare does have a button widget that does essentially the same thing as th
 
 #### HTML/CSS
 
-{% highlight html %}
+{% highlight html linenos %}
 <div id="libchat-status-container">Chat with a Librarian! 
     <span id="chat-status"></span>
 </div>
 
 {% endhighlight %}
 
-{% highlight css %}
+{% highlight css linenos %}
 #libchat-status-container {
     text-align: center;
     font-size: 1.2em;
@@ -53,7 +53,7 @@ SpringShare does have a button widget that does essentially the same thing as th
 #### JavaScript/jQuery
 
 
-{% highlight javascript %}
+{% highlight javascript linenos %}
  $(document).ready(function () {
     $.getJSON("https://api2.libanswers.com/1.0/chat/widgets/status/1234", function (json) {
         if (json.online === true) {
