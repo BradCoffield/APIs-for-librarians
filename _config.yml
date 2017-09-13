@@ -6,7 +6,12 @@ author: 'Brad Coffield'
 githuburl: 'https://github.com/BradCoffield'
 twitterurl: 'https://twitter.com/BradCoffield'
 personalhomepage: 'http://www.bradcoffield.com'
+<<<<<<< Updated upstream
 markdown: kramdown
+=======
+#markdown: kramdown
+highlighter: Pygments
+>>>>>>> Stashed changes
 permalink: /:title.html
 collections:
   libguides:   
