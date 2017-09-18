@@ -29,6 +29,9 @@
 </script>
 <!-- End Piwik Code -->
 
+ 
+
+
 
 </head>
 
@@ -38,7 +41,7 @@
     <div class="expanded row" id="header-row">
         <div class="medium-12 columns" >
         
-            <h1 id="site-title"><span>APIs for Librarians</span></h1>
+            <h1 id="site-title"><span><a href="">APIs for Librarians</a></span></h1>
             <div id="site-title-undertitle">Helping you to help yourself in helping your patrons. Or something.</div>
             <div id="code-icon"><i class="fa fa-code" aria-hidden="true"></i></div>
 
@@ -82,39 +85,42 @@
 
 <h4 id="htmlcss">HTML/CSS</h4>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"foo"</span><span class="nt">&gt;&lt;/div&gt;</span>
-<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">id=</span><span class="s">"btn"</span> <span class="na">value=</span><span class="s">"Click"</span> <span class="nt">/&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"random-guide-container"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h4&gt;</span>Have you considered?<span class="nt">&lt;/h4&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"foo"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">id=</span><span class="s">"btn"</span> <span class="na">value=</span><span class="s">"Try Another"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nf">#random-guide-container</span> <span class="p">{</span><span class="nl">font-family</span><span class="p">:</span> <span class="s2">'Martel'</span><span class="p">,</span> <span class="nb">serif</span><span class="p">;</span> <span class="nl">font-size</span><span class="p">:</span> <span class="m">1.2em</span><span class="p">;</span><span class="nl">text-align</span><span class="p">:</span><span class="nb">center</span><span class="p">;}</span>
+<span class="nf">#random-guide-container</span> <span class="nf">#btn</span> <span class="p">{</span><span class="nl">font-size</span><span class="p">:</span> <span class="m">.7em</span><span class="p">;}</span>
+<span class="nf">#btn</span> <span class="p">{</span> <span class="nl">margin-top</span><span class="p">:</span> <span class="m">.7em</span><span class="p">;</span> <span class="nl">display</span><span class="p">:</span> <span class="n">inline-block</span><span class="p">;</span> <span class="nl">line-height</span><span class="p">:</span> <span class="m">1.25</span><span class="p">;</span> <span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span> <span class="nl">vertical-align</span><span class="p">:</span> <span class="nb">middle</span><span class="p">;</span> <span class="nl">background</span><span class="p">:</span> <span class="m">#FFF</span><span class="p">;</span> <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#777</span><span class="p">;</span> <span class="nl">padding</span><span class="p">:</span> <span class="m">.5rem</span> <span class="m">1rem</span><span class="p">;</span> <span class="nl">border-radius</span><span class="p">:</span> <span class="m">.25rem</span><span class="p">;</span> <span class="p">}</span></code></pre></figure>
 
 <ul>
-  <li>Line 1: This shows the link.</li>
-  <li>Line 2: This generates the link which, when clicked, will re-roll the guide.</li>
-  <li>No CSS in the example.</li>
+  <li>Line 3 HTML: This shows the link.</li>
+  <li>Line 4 HTML: This generates the button which, when clicked, will re-roll the guide.</li>
 </ul>
 
 <h4 id="javascriptjquery">JavaScript/jQuery</h4>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-    <span class="nx">$</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">(</span><span class="s1">'https://lgapi-us.libapps.com/1.1/guides?site_id=foo1&amp;key=foo2&amp;status=1'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
-      <span class="kd">var</span> <span class="nx">entry</span> <span class="o">=</span> <span class="nx">result</span><span class="p">[</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="nx">result</span><span class="p">.</span><span class="nx">length</span><span class="p">)];</span>
-      <span class="kd">var</span> <span class="nx">randomGuide</span> <span class="o">=</span> <span class="s1">'&lt;a href="'</span> <span class="o">+</span> <span class="nx">entry</span><span class="p">.</span><span class="nx">url</span> <span class="o">+</span> <span class="s1">'"&gt;'</span> <span class="o">+</span> <span class="nx">entry</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s1">'&lt;/a&gt;'</span><span class="p">;</span>
-      <span class="nx">$</span><span class="p">(</span><span class="s1">'#foo'</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">randomGuide</span><span class="p">);</span>
-  <span class="p">});</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s2">"#btn"</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-        <span class="nx">$</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">(</span><span class="s1">'https://lgapi-us.libapps.com/1.1/guides?site_id=foo1&amp;key=foo2&amp;status=1'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
-            <span class="kd">var</span> <span class="nx">entry</span> <span class="o">=</span> <span class="nx">result</span><span class="p">[</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="nx">result</span><span class="p">.</span><span class="nx">length</span><span class="p">)];</span>
-            <span class="kd">var</span> <span class="nx">randomGuide</span> <span class="o">=</span> <span class="s1">'&lt;a href="'</span> <span class="o">+</span> <span class="nx">entry</span><span class="p">.</span><span class="nx">url</span> <span class="o">+</span> <span class="s1">'"&gt;'</span> <span class="o">+</span> <span class="nx">entry</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s1">'&lt;/a&gt;'</span><span class="p">;</span>
-            <span class="nx">$</span><span class="p">(</span><span class="s1">'#foo'</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">randomGuide</span><span class="p">);</span>
-  <span class="p">});</span>  <span class="p">});</span>  <span class="p">});</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"> <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+       <span class="kd">var</span> <span class="nx">getRandomGuide</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+           <span class="nx">$</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">(</span><span class="s1">'https://lgapi-us.libapps.com/1.1/guides?site_id=foo1&amp;key=foo2&amp;status=1'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+               <span class="kd">var</span> <span class="nx">entry</span> <span class="o">=</span> <span class="nx">result</span><span class="p">[</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="nx">result</span><span class="p">.</span><span class="nx">length</span><span class="p">)];</span>
+               <span class="kd">var</span> <span class="nx">randomGuide</span> <span class="o">=</span> <span class="s1">'&lt;a href="'</span> <span class="o">+</span> <span class="nx">entry</span><span class="p">.</span><span class="nx">url</span> <span class="o">+</span> <span class="s1">'"&gt;'</span> <span class="o">+</span> <span class="nx">entry</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s1">'&lt;/a&gt;'</span><span class="p">;</span>
+               <span class="nx">$</span><span class="p">(</span><span class="s1">'#foo'</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">randomGuide</span><span class="p">);</span>
+           <span class="p">});</span> <span class="p">};</span>
+       <span class="nx">getRandomGuide</span><span class="p">();</span>
+       <span class="nx">$</span><span class="p">(</span><span class="s1">'#btn'</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span><span class="nx">getRandomGuide</span><span class="p">()});</span> <span class="p">});</span>
  </code></pre></figure>
 
 <ul>
-  <li>Line 2: <code class="highlighter-rouge">foo1</code> and <code class="highlighter-rouge">foo2</code> are placeholders. Fill these in with the information provided by Springshare.</li>
-  <li>Line 2: <code class="highlighter-rouge">status=1</code> pulls JSON data for only your published guides.</li>
-  <li>Line 3: This is the randomizing part.</li>
-  <li>Line 4: Builds the actual link pulling in the url and name from the JSON data returned from the API call.</li>
-  <li>Line 5: Attaches to the <code class="highlighter-rouge">#foo</code> and places the link we’ve built.</li>
-  <li>Line 7: This is the beginning of what fuels the button which will regenerate the random link.</li>
-  <li>Lines 8-11: Essentially the same as the above.</li>
+  <li>Line 3: <code class="highlighter-rouge">foo1</code> and <code class="highlighter-rouge">foo2</code> are placeholders. Fill these in with the information provided by Springshare.</li>
+  <li>Line 3: <code class="highlighter-rouge">status=1</code> pulls JSON data for only your published guides.</li>
+  <li>Line 4: This is the randomizing part.</li>
+  <li>Line 5: Builds the actual link pulling in the url and name from the JSON data returned from the API call.</li>
+  <li>Line 6: Attaches to the <code class="highlighter-rouge">#foo</code> and places the link we’ve built.</li>
+  <li>Line 8: Runs the above code so that a link appears on page load.</li>
+  <li>Line 9: Creates the button and makes the code run again on click.</li>
 </ul>
 </div>
     </div>

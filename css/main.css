@@ -1,4 +1,6 @@
- 
+#site-title a{
+	text-decoration: none;
+} 
 
 
 .implementation{
