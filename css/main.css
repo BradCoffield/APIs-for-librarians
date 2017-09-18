@@ -80,6 +80,7 @@ li {font-size: 1.3em;}
     text-align: center;
     line-height: 1.15em; 
     border-left: 0px solid teal !important;
+    margin:0 0 !important;
 }
 
 #site-title {text-align: center;font-size: 3em;}
