@@ -42,7 +42,7 @@ Pressing the button will re-run everything and display a new link.
 
 {% endhighlight %}
 * Line 3 HTML: This shows the link.
-* Line 4: This generates the button which, when clicked, will re-roll the guide.
+* Line 4 HTML: This generates the button which, when clicked, will re-roll the guide.
 
 
 #### JavaScript/jQuery
