@@ -27,14 +27,23 @@ Pressing the button will re-run everything and display a new link.
 #### HTML/CSS
 
 {% highlight html linenos %}
-<div id="foo"></div>
-<input type="button" id="btn" value="Click" />
+<div id="random-guide-container">
+    <h4>Have you considered?</h4>
+    <div id="foo"></div>
+    <input type="button" id="btn" value="Try Another" />
+</div>
 
 {% endhighlight %}
 
-* Line 1: This shows the link.
-* Line 2: This generates the link which, when clicked, will re-roll the guide.
-* No CSS in the example.
+{% highlight css linenos %}
+#random-guide-container {font-family: 'Martel', serif; font-size: 1.2em;text-align:center;}
+#random-guide-container #btn {font-size: .7em;}
+#btn { margin-top: .7em; display: inline-block; line-height: 1.25; text-align: center; vertical-align: middle; background: #FFF; border: 1px solid #777; padding: .5rem 1rem; border-radius: .25rem; }
+
+{% endhighlight %}
+* Line 3 HTML: This shows the link.
+* Line 4: This generates the button which, when clicked, will re-roll the guide.
+
 
 #### JavaScript/jQuery
 
