@@ -49,24 +49,21 @@ Pressing the button will re-run everything and display a new link.
 
 
 {% highlight javascript linenos %}
-$(document).ready(function(){
-    $.getJSON('https://lgapi-us.libapps.com/1.1/guides?site_id=foo1&key=foo2&status=1', function (result) {
-      var entry = result[Math.floor(Math.random() * result.length)];
-      var randomGuide = '<a href="' + entry.url + '">' + entry.name + '</a>';
-      $('#foo').html(randomGuide);
-  });
-    $("#btn").click(function(){
-        $.getJSON('https://lgapi-us.libapps.com/1.1/guides?site_id=foo1&key=foo2&status=1', function (result) {
-            var entry = result[Math.floor(Math.random() * result.length)];
-            var randomGuide = '<a href="' + entry.url + '">' + entry.name + '</a>';
-            $('#foo').html(randomGuide);
-  });  });  });
+ $(document).ready(function () {
+       var getRandomGuide = function () {
+           $.getJSON('https://lgapi-us.libapps.com/1.1/guides?site_id=foo1&key=foo2&status=1', function (result) {
+               var entry = result[Math.floor(Math.random() * result.length)];
+               var randomGuide = '<a href="' + entry.url + '">' + entry.name + '</a>';
+               $('#foo').html(randomGuide);
+           }); };
+       getRandomGuide();
+       $('#btn').click(function () {getRandomGuide()}); });
  {% endhighlight %}
 
-* Line 2: ```foo1``` and ```foo2``` are placeholders. Fill these in with the information provided by Springshare.
-* Line 2: ```status=1``` pulls JSON data for only your published guides.
-* Line 3: This is the randomizing part.
-* Line 4: Builds the actual link pulling in the url and name from the JSON data returned from the API call.
-* Line 5: Attaches to the ```#foo``` and places the link we've built.
-* Line 7: This is the beginning of what fuels the button which will regenerate the random link.
-* Lines 8-11: Essentially the same as the above.         
+* Line 3: ```foo1``` and ```foo2``` are placeholders. Fill these in with the information provided by Springshare.
+* Line 3: ```status=1``` pulls JSON data for only your published guides.
+* Line 4: This is the randomizing part.
+* Line 5: Builds the actual link pulling in the url and name from the JSON data returned from the API call.
+* Line 6: Attaches to the ```#foo``` and places the link we've built.
+* Line 8: Runs the above code so that a link appears on page load.
+* Line 9: Creates the button and makes the code run again on click.
