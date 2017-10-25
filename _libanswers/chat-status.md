@@ -1,6 +1,8 @@
 ---
 layout: implementations
 title: "Chat Status"
+author: "Brad Coffield"
+author_email: "bcoffield@gmail.com"
 ---
 ## Description
         

@@ -1,6 +1,8 @@
 ---
 layout: implementations
 title: "Today's Hours"
+author: "Brad Coffield"
+author_email: "bcoffield@gmail.com"
 ---
 ## Description
         
