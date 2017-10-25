@@ -1,6 +1,8 @@
 ---
 title: 'Sliding FAQ Display'
 layout: implementations
+author: "Brad Coffield"
+author_email: "bcoffield@gmail.com"
 ---
 
 ## Description
