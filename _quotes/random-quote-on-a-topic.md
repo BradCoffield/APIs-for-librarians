@@ -13,8 +13,6 @@ This checks the status of one of your LibChat widgets and based on a true/false 
 The styling here is more just a proof-of-concept. But you have the full range of CSS and JS at your disposal to make it look as you want.
 
 ![{{page.title}} screenshot]({{site.baseurl}}/assets/{{page.title}}-screenshot.jpg){:.screenshot}
-![{{page.title}} screenshot]({{site.baseurl}}/assets/{{page.title}}-screenshot2.jpg){:.screenshot}
-
        
 ### More details
 The API call, which is written in jQuery, will send a widget ID to your LibChat system and get a response as to whether or not that particular widget is online. You can use this to monitor general chat queues or the chat queues automatically created for each LibChat librarian.
@@ -25,14 +23,39 @@ SpringShare does have a button widget that does essentially the same thing as th
     
 ## The Code
 
-#### HTML/CSS
+#### HTML
 
 {% highlight html linenos %}
-
+<div id="random-quote"></div>
 {% endhighlight %}
 
-{% highlight css linenos %}
+#### CSS
 
+{:.code-notes}
+* Line ?: `#quote-wrapper` isn't necessary for production but gives the quote a specific space to inhabit.
+
+{% highlight css linenos %}
+#quote-text {
+    font-size: 1.5em;
+    line-height: 1.2em;
+    letter-spacing: .01em;
+    font-family: 'Martel', serif;
+    text-shadow: 1px 1px lightgray;
+    font-weight: bold;
+    text-align: right;
+}
+
+#quote-author {
+    font-size: 1em;
+    font-family: 'Martel', serif;
+    font-weight: 400;
+    text-align: right;
+    font-style: italic;
+}
+
+#quote-wrapper {
+    max-width: 20em;
+}
 {% endhighlight %}
 
 #### JavaScript/jQuery
