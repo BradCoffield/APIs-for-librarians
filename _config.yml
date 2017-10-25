@@ -16,5 +16,7 @@ collections:
     output: true
   libanswers:
     output: true
+  quotes:
+    output: true
 
         
