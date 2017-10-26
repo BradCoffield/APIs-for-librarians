@@ -27,12 +27,14 @@ A few things to know. First, you need to have your hours properly setup inside L
     
 ## The Code
 
-#### HTML/CSS
+#### HTML
 
 {% highlight html linenos %}
 <div id="todays-hours"></div>
 <input type="button" id="btn" value="Click" />
 {% endhighlight %}
+
+#### CSS
 
 {% highlight css linenos %}
 #todays-hours {background: blue;}
@@ -42,7 +44,15 @@ A few things to know. First, you need to have your hours properly setup inside L
 
 #### JavaScript/jQuery
 
+##### Notes for implementation:
 
+{:.code-notes}
+* Line 2: Your `iid=000` will have a different number.
+* Line 2: ```https://api3.libcal.com/api_hours_today.php?iid=000&lid=0&format=json&systemTime=0&callback=?``` is the link you'll generate through your LibCal admin area. Note the added ```&callback=?```
+* Line 3: This picks an ID from your html and appends things. Namely, some text you can change as you see fit and the day's hours for location 0.
+* If you have multiple library hours in LibCal you may need to have 1 or 2 or etc. instead of 0 in: `json.locations[0].rendered`
+
+##### The code itself:
 {% highlight javascript linenos %}
  $(document).ready(function () {
     $.getJSON("https://api3.libcal.com/api_hours_today.php?iid=000&lid=0&format=json&systemTime=0&callback=?", function (json) {
@@ -50,7 +60,4 @@ A few things to know. First, you need to have your hours properly setup inside L
     });
 });{% endhighlight %}
 
-* Line 2: Your ```iid=000``` will have a different number.
-* Line 2: ```https://api3.libcal.com/api_hours_today.php?iid=000&lid=0&format=json&systemTime=0&callback=?``` is the link you'll generate through your LibCal admin area. Note the added ```&callback=?```
-* Line 3: This picks an ID from your html and appends things. Namely, some text you can change as you see fit and the day's hours for location 0.
-* If you have multiple library hours in LibCal you may need to have 1 or 2 or etc. instead of 0 in: ```json.locations[0].rendered```
+

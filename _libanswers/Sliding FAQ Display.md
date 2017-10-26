@@ -25,7 +25,7 @@ We cycle through all the results, pulling the parts we need and assembling them 
     
 ## The Code
 
-#### HTML/CSS
+#### HTML
 
 {% highlight html linenos %}
   <h3><a href="YOUR_LIBANSWERS_SYSTEM">Library FAQ</a></h3>
@@ -36,6 +36,8 @@ We cycle through all the results, pulling the parts we need and assembling them 
    </div>
 
 {% endhighlight %}
+
+#### CSS
 
 {% highlight css linenos %}
 
@@ -55,7 +57,17 @@ li a {text-decoration: none;}
 
 #### JavaScript/jQuery
 
+##### Notes for implementation:
 
+{:.code-notes}
+* Line 2: ```iid=000``` will have a different number.
+* Line 2: ```&sort=totalhits&sort_dir=desc``` are what tells it to sort by total hits, descending. These are from the LibAnswers API documentation available in your LA system. 
+* Lines 3-8: Works to grab what we want from the returned JSON data and populates a ```<li>``` with it.
+* Line 9: Attaches the resulting set of list items to the HTML ID ```#foofoo```
+* Lines 10-13: Our Tiny Carousel options.
+* Line 23: All of Tiny Carousel. Take care to keep it after the code which is above it because our JSON items need to populate before Tiny Carousel activates.
+
+##### The code itself:
 {% highlight javascript linenos %}
   $(document).ready(function () {
          $.getJSON('https://api2.libanswers.com/1.0/faqs?iid=000&sort=totalhits&sort_dir=desc&callback=?', function (result) {
@@ -84,9 +96,3 @@ li a {text-decoration: none;}
  }); //end of (document).ready
 {% endhighlight %}
 
-* Line 2: ```iid=000``` will have a different number.
-* Line 2: ```&sort=totalhits&sort_dir=desc``` are what tells it to sort by total hits, descending. These are from the LibAnswers API documentation available in your LA system. 
-* Lines 3-8: Works to grab what we want from the returned JSON data and populates a ```<li>``` with it.
-* Line 9: Attaches the resulting set of list items to the HTML ID ```#foofoo```
-* Lines 10-13: Our Tiny Carousel options.
-* Line 23: All of Tiny Carousel. Take care to keep it after the code which is above it because our JSON items need to populate before Tiny Carousel activates.

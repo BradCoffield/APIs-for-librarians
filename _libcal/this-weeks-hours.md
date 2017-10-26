@@ -21,12 +21,14 @@ Our code finds the appropriate hours and pulls them out, makes them more present
     
 ## The Code
 
-#### HTML/CSS
+#### HTML 
 
 {% highlight html linenos %}
 <div id="weekly-hours-header">Library Hours:</div>
 <ul id="this-weeks-hours"></ul>
 {% endhighlight %}
+
+#### CSS
 
 {% highlight css linenos %}
 .its-today {
@@ -60,7 +62,17 @@ Our code finds the appropriate hours and pulls them out, makes them more present
 
 #### JavaScript/jQuery
 
+##### Notes for implementation:
 
+{:.code-notes}
+* Line 2: Your ```iid=000``` will have a different number.
+* Line 2: ```https://api3.libcal.com/api_hours_today.php?iid=000&lid=0&format=json&systemTime=0&callback=?``` is the link you'll generate through your LibCal admin area. Note the added ```&callback=?```
+* Lines 6 - 19: Springshare sends the date in YYYY-MM-DD format and this code trims the year off. 
+* Lines 23-43: Detects and trims the leading 0 from single digit months. You could also, with JS, change the dash to a '/' if you wanted and trim the 0 from days that start with it.
+* Lines 47-59: This is what takes all our info and presents it on our website.
+* Lines 63-88: Optional. This code will detect what day of the week it is (on page load) and apply a class to that day so you can highlight it in some way.
+
+##### The code itself:
 {% highlight javascript linenos %}
  $(document).ready(function () {
     $.getJSON("https://api3.libcal.com/api_hours_grid.php?iid=000&format=json&weeks=1&systemTime=0&callback=?", function (json) {
@@ -154,9 +166,4 @@ Our code finds the appropriate hours and pulls them out, makes them more present
 });
 });{% endhighlight %}
 
-* Line 2: Your ```iid=000``` will have a different number.
-* Line 2: ```https://api3.libcal.com/api_hours_today.php?iid=000&lid=0&format=json&systemTime=0&callback=?``` is the link you'll generate through your LibCal admin area. Note the added ```&callback=?```
-* Lines 6 - 19: Springshare sends the date in YYYY-MM-DD format and this code trims the year off. 
-* Lines 23-43: Detects and trims the leading 0 from single digit months. You could also, with JS, change the dash to a '/' if you wanted and trim the 0 from days that start with it.
-* Lines 47-59: This is what takes all our info and presents it on our website.
-* Lines 63-88: Optional. This code will detect what day of the week it is (on page load) and apply a class to that day so you can highlight it in some way.
+

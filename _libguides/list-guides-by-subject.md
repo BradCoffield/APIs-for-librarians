@@ -27,7 +27,7 @@ You link up the jQuery and your actual HTML using a specific ID name in your HTM
 
 ## The Code
 
-#### HTML/CSS
+#### HTML
 
 {% highlight html linenos %}
 <ul id="business-guides"></ul>
@@ -35,7 +35,15 @@ You link up the jQuery and your actual HTML using a specific ID name in your HTM
 
 #### JavaScript/jQuery
 
+##### Notes for implementation:
 
+{:.code-notes}
+* `foo1` and `foo2` are placeholders. Fill these in with the information provided by Springshare.
+* `status=1` refers to published guides.
+* `subject_ids=38607` refers to the specific code for the subject 'business' in our system. You'll need to replace that number.
+* The `#business-guides` is what links your JS to your HTML. The ID here needs to match the ID of the UL in your code.
+
+##### The code itself:
 {% highlight javascript linenos %}
 
 $.getJSON('https://lgapi-us.libapps.com/1.1/guides?site_id=foo1&key=foo2&status=1&subject_ids=38607', function (result) {
@@ -50,17 +58,3 @@ $.getJSON('https://lgapi-us.libapps.com/1.1/guides?site_id=foo1&key=foo2&status=
 
 #### Comments on the code:
 
-* ```
-foo1
-```and ```
-foo2
-```are placeholders. Fill these in with the information provided by Springshare.
-* ```
-status=1
-``` refers to published guides.
-* ```
-subject_ids=38607
-``` refers to the specific code for the subject 'business' in our system. You'll need to replace that number.
-* The ```
-#business-guides
-``` is what links your JS to your HTML. The ID here needs to match the ID of the UL in your code.
