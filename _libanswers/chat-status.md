@@ -54,7 +54,13 @@ SpringShare does have a button widget that does essentially the same thing as th
 
 #### JavaScript/jQuery
 
+##### Notes for implementation:
 
+{:.code-notes}
+* Line 2: ```1234``` is where you put the widget ID.
+* Lines 4 and 6: The stuff in paren after ```.html``` is what is getting injected into your html. This is where you can customize the displayed text, add or remove linkage etc. 
+
+##### The code itself:
 {% highlight javascript linenos %}
  $(document).ready(function () {
     $.getJSON("https://api2.libanswers.com/1.0/chat/widgets/status/1234", function (json) {
@@ -66,5 +72,3 @@ SpringShare does have a button widget that does essentially the same thing as th
     })
 });{% endhighlight %}
 
-* Line 2: ```1234``` is where you put the widget ID.
-* Lines 4 and 6: The stuff in paren after ```.html``` is what is getting injected into your html. This is where you can customize the displayed text, add or remove linkage etc. 
