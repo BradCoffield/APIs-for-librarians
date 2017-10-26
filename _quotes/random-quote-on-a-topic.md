@@ -67,6 +67,7 @@ Another option would be to create your own set of quotes and build them into a J
 {:.code-notes}
 * Line 41: `uid` and `tokenid` will be given to you by Quotes.net once you sign up. 
 * Line 41: `query=writing` is where you put your keyword to search. Replace `writing` with whatever suits you.
+* Line 41: If you wanted to use a handcrafted JSON file you would change the long string that starts with `http://` with the path to your local file. Something like `'/quotes.json'`
 * Line 64: Change `theQuoteItself.length < 145` to some other number if you want to allow longer quotes or restrict it to shorter quotes. 
 
 ##### The code itself:
