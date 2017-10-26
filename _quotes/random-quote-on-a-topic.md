@@ -6,20 +6,22 @@ author_email: "bcoffield@gmail.com"
 ---
 ## Description
         
-This checks the status of one of your LibChat widgets and based on a true/false response displays custom text. So, if the widget is online (meaning that a particular chat queue is active) you can have it say whatever you want. In my example I have ```Online!``` and ```Offline```, respectively.
+This queries the [Quotes.net](http://www.quotes.net/) API and returns a list of quotes that match your keyword search. You can specify the terms of the search in the javascript code. Each time the page is loaded a random quote is selected from the returned batch and will be displayed. The code is set to reject any quotes that are more than 145 characters but you can easily adjust this number up or down. 
 
 ### Screenshot
 
-The styling here is more just a proof-of-concept. But you have the full range of CSS and JS at your disposal to make it look as you want.
+You can style it however you want. This is just an example.
 
 ![{{page.title}} screenshot]({{site.baseurl}}/assets/{{page.title}}-screenshot.jpg){:.screenshot}
        
 ### More details
-The API call, which is written in jQuery, will send a widget ID to your LibChat system and get a response as to whether or not that particular widget is online. You can use this to monitor general chat queues or the chat queues automatically created for each LibChat librarian.
-        
-The code is just a simple if/else that checks to see if LibChat has responded ```true```. If so, you can have it display one thing and if not then another. The success response can be linked to a pop-out full chat interface and the fail response can be linked to your LibAnswers system. Or they can not be linked. Or linked to anything you'd like.
 
-SpringShare does have a button widget that does essentially the same thing as this and, in fact, they do allow heavy customization of it. Though doing it this way gives you complete control over it.
+In order to use the Quotes.net API you need to sign up for a free account. Free accounts can query the API up to 100 times per day. Therefore it's likely not suitable for a library homepage or widespread usage across libguides. However, usage on a few guides or pages with less traffic would be just fine.
+
+Details on acceptable use of the API and to sign up can be found at [http://www.quotes.net/quotes_api.php](http://www.quotes.net/quotes_api.php).
+
+Another option would be to create your own set of quotes and build them into a JSON file you host on your own servers. This would have the benefit of unlimited usage and personalized curation.
+
     
 ## The Code
 
