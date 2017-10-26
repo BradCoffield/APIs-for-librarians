@@ -57,11 +57,11 @@ Pressing the button will re-run everything and display a new link.
 ##### Notes for implementation:
 
 {:.code-notes}
-* Line 3: ```foo1``` and ```foo2``` are placeholders. Fill these in with the information provided by Springshare.
-* Line 3: ```status=1``` pulls JSON data for only your published guides.
+* Line 3: `foo1` and `foo2` are placeholders. Fill these in with the information provided by Springshare.
+* Line 3: `status=1` pulls JSON data for only your published guides.
 * Line 4: This is the randomizing part.
 * Line 5: Builds the actual link pulling in the url and name from the JSON data returned from the API call.
-* Line 6: Attaches to the ```#foo``` and places the link we've built.
+* Line 6: Attaches to the `#foo` and places the link we've built.
 * Line 8: Runs the above code so that a link appears on page load.
 * Line 9: Creates the button and makes the code run again on click.
 
