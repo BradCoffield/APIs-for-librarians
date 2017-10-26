@@ -6,9 +6,9 @@ title: 'APIs for Librarians'
 <div class="row">
     <div class="medium-12 columns">
         <h2>Introduction</h2>
-        <p>The goal of this site is to help librarians (coders and non-coders alike) quickly and easily make their web presences stronger by tapping into the wonderful world of APIs. There's a staggering amount of useful data offered to the world through APIs - whether it be from Springshare, OCLC, Twitter, even weather services (and many, many more). With some code you can pull, manipulate, and display useful data for your users.</p>
+        <p>The goal of this site is to help librarians (coders and non-coders alike) quickly and easily make their web presences stronger by tapping into the wonderful world of APIs. There's a staggering amount of useful data offered to the world through APIs - whether it be from Springshare, OCLC, Twitter, weather services, or many more. With some code you can pull, manipulate, and display useful data for your users.</p>
 
-        <p>This site is geared towards librarians who aren't web developers but who would like to enhance their LibGuides or library websites. If you are a coder, then you can perhaps skip over some of the documentation and copy the code right away.</p>
+        <p>This site is geared towards librarians who aren't web developers but who would like to enhance their LibGuides or library websites. Explanations are provided regarding what an implementation does and what exactly you need to change in it so that you can use it. If you are a coder, then you can perhaps skip over some of the documentation and copy the code right away.</p>
 
         <p>This is a project in ongoing development. I hope to continually add new implementations. If you have used an API and would like to share your code on this site... great! Let me know.</p>
 
@@ -70,6 +70,28 @@ title: 'APIs for Librarians'
           </div>
      
         </div>
+        
+<div class="medium-12 columns" id="homepage-implementations-column">
+     <div class="medium-12 columns implementation">
+                <h4>Quotes.net</h4>
+                <p>
+
+
+                    <ul>
+
+                        {% for page in site.quotes %}
+                        <li>
+                            <a href="{{site.baseurl}}{{ page.url}}">{{page.title}}</a>
+                        </li>
+                        {% endfor %}
+
+
+
+                    </ul>
+                </p>
+            </div>
+    
+</div>
 
 
 
