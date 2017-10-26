@@ -16,11 +16,11 @@ You can style it however you want. This is just an example.
        
 ### More details
 
-In order to use the Quotes.net API you need to sign up for a free account. Free accounts can query the API up to 100 times per day. Therefore it's likely not suitable for a library homepage or widespread usage across libguides. However, usage on a few guides or pages with less traffic would be just fine.
+In order to use the Quotes.net API you need to sign up for a free account. Free accounts can query the API up to 100 times per day. Therefore, it's likely not suitable for a library homepage or widespread usage across libguides. However, usage on a few guides or pages with less traffic would be just fine.
 
 Details on acceptable use of the API and to sign up can be found at [http://www.quotes.net/quotes_api.php](http://www.quotes.net/quotes_api.php).
 
-Another option would be to create your own set of quotes and build them into a JSON file you host on your own servers. This would have the benefit of unlimited usage and personalized curation.
+Another option would be to create your own set of quotes and build them into a JSON file you host on your own servers. This would have the benefit of unlimited usage and personalized curation. You would only need to change the path in the code below, which is noted.
 
     
 ## The Code
@@ -34,7 +34,7 @@ Another option would be to create your own set of quotes and build them into a J
 #### CSS
 
 {:.code-notes}
-* Line ?: `#quote-wrapper` isn't necessary for production but gives the quote a specific space to inhabit.
+* Line 19: `#quote-wrapper` isn't necessary for production but gives the quote a specific space to inhabit.
 
 {% highlight css linenos %}
 #quote-text {
@@ -65,9 +65,9 @@ Another option would be to create your own set of quotes and build them into a J
 ##### Notes for implementation:
 
 {:.code-notes}
-* Line ?: 
-* Line ?: 
-* Line ?: 
+* Line 41: `uid` and `tokenid` will be given to you by Quotes.net once you sign up. 
+* Line 41: `query=writing` is where you put your keyword to search. Replace `writing` with whatever suits you.
+* Line 64: Change `theQuoteItself.length < 145` to some other number if you want to allow longer quotes or restrict it to shorter quotes. 
 
 ##### The code itself:
 {% highlight javascript linenos %}
@@ -111,7 +111,7 @@ $(document).ready(function() {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
   var getRandomQuote = function() {
-    $.get('http://www.stands4.com/services/v2/quotes.php?uid=5722&tokenid=ReVtjomO3okWzsHs&searchtype=SEARCH&query=writing', function (data) {
+    $.get('http://www.stands4.com/services/v2/quotes.php?uid=0000&tokenid=0000&searchtype=SEARCH&query=writing', function (data) {
       //xmltojson
       var funTimes = xmlToJson(data);
       //Creating a variable going deeper into the JSON object to make later code neater
