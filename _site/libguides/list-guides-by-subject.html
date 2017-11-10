@@ -4,7 +4,9 @@
 <head>
     <title>List Guides by Subject</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://use.fontawesome.com/b5b4f2ce2b.js"></script>
+    
+         
+    <link rel="stylesheet" href="/assets/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/customfoundation.min.css">
     <link href="/css/main.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/syntax.css">
@@ -12,22 +14,15 @@
 
     
 
-<!-- Piwik -->
-<script type="text/javascript">
-  var _paq = _paq || [];
-  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="//ashleykunsa.com/piwik/";
-    _paq.push(['setTrackerUrl', u+'piwik.php']);
-    _paq.push(['setSiteId', '2']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-  })();
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-98096992-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-98096992-1');
 </script>
-<!-- End Piwik Code -->
 
  
 
@@ -84,11 +79,22 @@
 
 <h2 id="the-code">The Code</h2>
 
-<h4 id="htmlcss">HTML/CSS</h4>
+<h4 id="html">HTML</h4>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ul</span> <span class="na">id=</span><span class="s">"business-guides"</span><span class="nt">&gt;&lt;/ul&gt;</span></code></pre></figure>
 
 <h4 id="javascriptjquery">JavaScript/jQuery</h4>
+
+<h5 id="notes-for-implementation">Notes for implementation:</h5>
+
+<ul class="code-notes">
+  <li><code class="highlighter-rouge">foo1</code> and <code class="highlighter-rouge">foo2</code> are placeholders. Fill these in with the information provided by Springshare.</li>
+  <li><code class="highlighter-rouge">status=1</code> refers to published guides.</li>
+  <li><code class="highlighter-rouge">subject_ids=38607</code> refers to the specific code for the subject ‘business’ in our system. You’ll need to replace that number.</li>
+  <li>The <code class="highlighter-rouge">#business-guides</code> is what links your JS to your HTML. The ID here needs to match the ID of the UL in your code.</li>
+</ul>
+
+<h5 id="the-code-itself">The code itself:</h5>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">(</span><span class="s1">'https://lgapi-us.libapps.com/1.1/guides?site_id=foo1&amp;key=foo2&amp;status=1&amp;subject_ids=38607'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">businessGuides</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">result</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">guidesData</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
@@ -101,22 +107,6 @@
 
 <h4 id="comments-on-the-code">Comments on the code:</h4>
 
-<ul>
-  <li><code class="highlighter-rouge">
-foo1
-</code>and <code class="highlighter-rouge">
-foo2
-</code>are placeholders. Fill these in with the information provided by Springshare.</li>
-  <li><code class="highlighter-rouge">
-status=1
-</code> refers to published guides.</li>
-  <li><code class="highlighter-rouge">
-subject_ids=38607
-</code> refers to the specific code for the subject ‘business’ in our system. You’ll need to replace that number.</li>
-  <li>The <code class="highlighter-rouge">
-#business-guides
-</code> is what links your JS to your HTML. The ID here needs to match the ID of the UL in your code.</li>
-</ul>
 </div>
     </div>
     
