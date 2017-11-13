@@ -89,10 +89,9 @@ Overly long descriptions are being hidden behind a link ("read more"). When clic
 ##### Notes for implementation:
 
 {:.code-notes}
-* Line 41: `uid` and `tokenid` will be given to you by Quotes.net once you sign up. 
-* Line 41: `query=writing` is where you put your keyword to search. Replace `writing` with whatever suits you.
-* Line 41: If you wanted to use a handcrafted JSON file you would change the long string that starts with `http://` with the path to your local file. Something like `'/quotes.json'`
-* Line 64: Change `theQuoteItself.length < 145` to some other number if you want to allow longer quotes or restrict it to shorter quotes. 
+* Lines 20-180: This part of code is what does the description hiding and is from http://viralpatel.net.  
+* Lines 196-205: Could be removed if you only want to display one result. If so then just add `let num1= getRandomIntInclusive(0, data.response.docs.length);` in their stead. 
+* Lines 214-227: Also delete these if you only want one result. 
 
 ##### The code itself:
 {% highlight javascript linenos %}
