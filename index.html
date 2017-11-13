@@ -80,7 +80,7 @@ title: 'APIs for Librarians'
                     <ul>
 
                         {% for page in site.quotes %}
-                        <li style="list-style-type: none;">
+                        <li  >
                             <a href="{{site.baseurl}}{{ page.url}}">{{page.title}}</a>
                         </li>
                         {% endfor %}
@@ -93,7 +93,27 @@ title: 'APIs for Librarians'
     
 </div>
 
+<div class="medium-12 columns" id="homepage-implementations-column">
+    <div class="medium-12 columns implementation">
+              <h3 class="service-titles"><i class="fa fa-code" aria-hidden="true"></i> The Internet Archive </h3>
+               <p>
 
+
+                   <ul>
+
+                       {% for page in site.archivedotorg %}
+                       <li  >
+                           <a href="{{site.baseurl}}{{ page.url}}">{{page.title}}</a>
+                       </li>
+                       {% endfor %}
+
+
+
+                   </ul>
+               </p>
+           </div>
+   
+</div>
 
 
 
