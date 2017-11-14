@@ -18,5 +18,7 @@ collections:
     output: true
   quotes:
     output: true
+  archivedotorg:
+    output: true
 
         

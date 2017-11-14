@@ -155,7 +155,15 @@ title: 'APIs for Librarians'
 
         </div>
 
+<<<<<<< HEAD
     </div>
+=======
+                        {% for page in site.quotes %}
+                        <li  >
+                            <a href="{{site.baseurl}}{{ page.url}}">{{page.title}}</a>
+                        </li>
+                        {% endfor %}
+>>>>>>> 9ccad894c233a60d32721f8b3f3e29c3c948be21
 
     <div class="medium-12 columns" id="homepage-implementations-column">
         <div class="medium-12 columns implementation">
@@ -166,6 +174,7 @@ title: 'APIs for Librarians'
 
                 <ul>
 
+<<<<<<< HEAD
                     {% for page in site.quotes %}
                     <li style="list-style-type: none;">
                         <a href="{{site.baseurl}}{{ page.url}}">{{page.title}}</a>
@@ -177,6 +186,31 @@ title: 'APIs for Librarians'
                 </ul>
             </p>
         </div>
+=======
+<div class="medium-12 columns" id="homepage-implementations-column">
+    <div class="medium-12 columns implementation">
+              <h3 class="service-titles"><i class="fa fa-code" aria-hidden="true"></i> The Internet Archive </h3>
+               <p>
+
+
+                   <ul>
+
+                       {% for page in site.archivedotorg %}
+                       <li  >
+                           <a href="{{site.baseurl}}{{ page.url}}">{{page.title}}</a>
+                       </li>
+                       {% endfor %}
+
+
+
+                   </ul>
+               </p>
+           </div>
+   
+</div>
+
+
+>>>>>>> 9ccad894c233a60d32721f8b3f3e29c3c948be21
 
     </div>
  -->
