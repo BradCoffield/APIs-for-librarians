@@ -1,3 +1,49 @@
+.custom-dots li::before {
+    font-family: 'FontAwesome';
+    content: '\f068';
+    margin:0 5px 0 -15px;
+    /* color: gray; */
+}
+
+.custom-dots li {list-style: none;}
+
+.service-container-new {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    /* background: url(/assets/hip-square.png); */
+}
+.service-title {
+    /* background: yellow; */
+}
+
+.service-list-wrapper {
+    /* background: green; */
+}
+
+.service-container {
+      /* display: flex;
+    align-items: center;
+       */
+
+     
+    margin: .5em 0;
+}
+
+.service-title {
+     
+    padding: 1em 0 1em 1em;
+    margin-left:1em;
+    border-radius:5px;
+/* box-shadow: 0px 0px 1px #999; */
+text-align: left;}
+
+#libguides.service-title{
+     
+}
+ 
+.underline {background: cyan;}
+ 
 .highlighter-rouge {background: #F3F1F1;}
 
 
