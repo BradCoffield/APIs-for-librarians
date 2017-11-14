@@ -3,10 +3,10 @@ layout: default
 title: 'APIs for Librarians' 
 ---
 
- 
 
 
-<div class="row"> 
+
+<div class="row">
     <div class="medium-12 columns">
         <h2>Introduction</h2>
         <p>The goal of this site is to help librarians (coders and non-coders alike) quickly and easily make their web presences
@@ -23,101 +23,131 @@ title: 'APIs for Librarians'
             and would like to share your code on this site... great! Let me know.</p>
 
     </div>
-    </div>
-    <div class="row">
-        <div class="small-12 columns"><h2> 
-            Browse by services
-        </h2></div>
-    </div>
-    <div class="row">
-        <div class="small-12 columns"><h3>
-            Springshare
-        </h3></div>
-       
-
-       
-        <div class="small-12 columns service-container-new">
-            <div class="small-12 medium-4 columns"><h4 class="post-side-title" id="libguides">LibGuides</h4></div>
-            <div class="small-12 medium-8 columns service-list-wrapper">      
-                <ul class="custom-dots">
-         {% for libguide in site.libguides %}
-                        <li>
-                         <a href="{{site.baseurl}}{{ libguide.url}}">{{libguide.title}}</a>
-                         </li>
-                                {% endfor %}
-                                    </ul></div>
-            
-                    </div>
-
-                    <div class="small-12 columns service-container-new">
-                            <div class="small-12 medium-4 columns"><h4 class="post-side-title">LibCal</h4></div>
-                            <div class="small-12 medium-8 columns">  <ul class="custom-dots">
-                                    {% for libcals in site.libcal %}
-                                    <li>
-                                        <a href="{{site.baseurl}}{{ libcals.url}}">{{libcals.title}}</a>
-                                    </li>
-                                    {% endfor %}
-            
-                                </ul></div>
-                            
-                                    </div>
-
-                    <div class="small-12 columns service-container-new">
-                        <div class="small-12 medium-4 columns "><h4 class="post-side-title">
-                            LibAnswers &amp; LibChat
-                        </h4></div>
-                        <div class="small-12 medium-8 columns">   <ul class="custom-dots">
-                                {% for libanswer in site.libanswers %}
-                                <li>
-                                    <a href="{{site.baseurl}}{{ libanswer.url}}">{{libanswer.title}}</a>
-                                </li>
-                                {% endfor %}
-        
-                            </ul></div>
-                        
-                                </div>
-                          
-    </div>
-
-    <div class="row">
-            <div class="small-12 columns"><h3>
-                Stands4
-            </h3></div>
-            <div class="small-12 columns service-container-new">
-                    <div class="small-12 medium-4 columns"><h4 class="post-side-title">Quotes.net</h4></div>
-                    <div class="small-12 medium-8 columns">  <ul class="custom-dots">
-                            
-                                                {% for page in site.quotes %}
-                                                <li style="list-style-type: none;">
-                                                    <a href="{{site.baseurl}}{{ page.url}}">{{page.title}}</a>
-                                                </li>
-                                                {% endfor %}
-                            
-                            
-                            
-                                            </ul></div>
-                    
-                            </div>
 </div>
- 
+<div class="row">
+    <div class="small-12 columns">
+        <h2>
+            Browse by services
+        </h2>
+    </div>
+</div>
+<div class="row">
+    <div class="small-12 columns">
+        <h3>
+            Springshare
+        </h3>
+    </div>
+
+
+
+    <div class="small-12 columns service-container-new">
+        <div class="small-12 medium-4 columns">
+            <h4 class="post-side-title" id="libguides">LibGuides</h4>
+        </div>
+        <div class="small-12 medium-8 columns service-list-wrapper">
+            <ul class="custom-dots">
+                {% for libguide in site.libguides %}
+                <li>
+                    <a href="{{site.baseurl}}{{ libguide.url}}">{{libguide.title}}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="small-12 columns service-container-new">
+        <div class="small-12 medium-4 columns">
+            <h4 class="post-side-title">LibCal</h4>
+        </div>
+        <div class="small-12 medium-8 columns">
+            <ul class="custom-dots">
+                {% for libcals in site.libcal %}
+                <li>
+                    <a href="{{site.baseurl}}{{ libcals.url}}">{{libcals.title}}</a>
+                </li>
+                {% endfor %}
+
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="small-12 columns service-container-new">
+        <div class="small-12 medium-4 columns ">
+            <h4 class="post-side-title">
+                LibAnswers &amp; LibChat
+            </h4>
+        </div>
+        <div class="small-12 medium-8 columns">
+            <ul class="custom-dots">
+                {% for libanswer in site.libanswers %}
+                <li>
+                    <a href="{{site.baseurl}}{{ libanswer.url}}">{{libanswer.title}}</a>
+                </li>
+                {% endfor %}
+
+            </ul>
+        </div>
+
+    </div>
+
+</div>
 
 <div class="row">
+    <div class="small-12 columns">
+        <h3>
+            Stands4
+        </h3>
+    </div>
     <div class="small-12 columns service-container-new">
-        <div class="small-12 medium-4 columns"><h4 class="post-side-title" id="libguides">The Internet Archive</h4></div>
-        <div class="small-12 medium-8 columns service-list-wrapper">      
+        <div class="small-12 medium-4 columns">
+            <h4 class="post-side-title">Quotes.net</h4>
+        </div>
+        <div class="small-12 medium-8 columns">
             <ul class="custom-dots">
-                    {% for page in site.archivedotorg %}
-                    <li><a href="{{site.baseurl}}{{ page.url}}">{{page.title}}</a>
-                     </li>
-                      {% endfor %}
-                      </ul>
+
+                {% for page in site.quotes %}
+                <li style="list-style-type: none;">
+                    <a href="{{site.baseurl}}{{ page.url}}">{{page.title}}</a>
+                </li>
+                {% endfor %}
 
 
- </div>
 
-           
+            </ul>
+        </div>
 
-
+    </div>
 </div>
-</div>
 
+
+<div class="row">
+        <div class="small-12 columns">
+                <h3>
+                    The Internet Archive
+                </h3>
+            </div>
+    <div class="small-12 columns service-container-new">
+        <div class="small-12 medium-4 columns">
+            <h4 class="post-side-title">Naropa Audio
+                
+            </h4>
+        </div>
+        <div class="small-12 medium-8 columns service-list-wrapper">
+            <ul class="custom-dots">
+                {% for page in site.archivedotorg %}
+                <li>
+                    <a href="{{site.baseurl}}{{ page.url}}">{{page.title}}</a>
+                </li>
+                {% endfor %}
+            </ul>
+
+
+        </div>
+
+
+
+
+    </div>
+</div>
