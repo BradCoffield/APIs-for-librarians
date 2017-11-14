@@ -98,127 +98,26 @@ title: 'APIs for Librarians'
                                             </ul></div>
                     
                             </div>
-<!-- 
-    <div class="medium-12 columns" id="homepage-implementations-column">
-        <h2>Browse by Service</h2>
-        <h3 class="service-titles">
-            <i class="fa fa-code" aria-hidden="true"></i> Springshare </h3>
-
-        <div class="row">
-            <div class="medium-6 large-4 columns implementation">
-                <h4>LibGuides</h4>
-                <p>
-
-
-                    <ul>
-
-                        {% for libguide in site.libguides %}
-                        <li>
-                            <a href="{{site.baseurl}}{{ libguide.url}}">{{libguide.title}}</a>
-                        </li>
-                        {% endfor %}
-
-
-
-                    </ul>
-                </p>
-            </div>
-            <div class="medium-6 large-4 columns implementation">
-                <h4>LibCal</h4>
-                <p>
-                    <ul>
-                        {% for libcals in site.libcal %}
-                        <li>
-                            <a href="{{site.baseurl}}{{ libcals.url}}">{{libcals.title}}</a>
-                        </li>
-                        {% endfor %}
-
-                    </ul>
-
-                </p>
-            </div>
-
-            <div class="large-4 columns implementation">
-                <h4>LibAnswers &amp; LibChat</h4>
-                <p>
-                    <ul>
-                        {% for libanswer in site.libanswers %}
-                        <li>
-                            <a href="{{site.baseurl}}{{ libanswer.url}}">{{libanswer.title}}</a>
-                        </li>
-                        {% endfor %}
-
-                    </ul>
-
-                </p>
-            </div>
-
-        </div>
-
-<<<<<<< HEAD
-    </div>
-=======
-                        {% for page in site.quotes %}
-                        <li  >
-                            <a href="{{site.baseurl}}{{ page.url}}">{{page.title}}</a>
-                        </li>
-                        {% endfor %}
->>>>>>> 9ccad894c233a60d32721f8b3f3e29c3c948be21
-
-    <div class="medium-12 columns" id="homepage-implementations-column">
-        <div class="medium-12 columns implementation">
-            <h3 class="service-titles">
-                <i class="fa fa-code" aria-hidden="true"></i> Quotes.net </h3>
-            <p>
-
-
-                <ul>
-
-<<<<<<< HEAD
-                    {% for page in site.quotes %}
-                    <li style="list-style-type: none;">
-                        <a href="{{site.baseurl}}{{ page.url}}">{{page.title}}</a>
-                    </li>
-                    {% endfor %}
-
-
-
-                </ul>
-            </p>
-        </div>
-=======
-<div class="medium-12 columns" id="homepage-implementations-column">
-    <div class="medium-12 columns implementation">
-              <h3 class="service-titles"><i class="fa fa-code" aria-hidden="true"></i> The Internet Archive </h3>
-               <p>
-
-
-                   <ul>
-
-                       {% for page in site.archivedotorg %}
-                       <li  >
-                           <a href="{{site.baseurl}}{{ page.url}}">{{page.title}}</a>
-                       </li>
-                       {% endfor %}
-
-
-
-                   </ul>
-               </p>
-           </div>
-   
 </div>
+ 
+
+<div class="row">
+    <div class="small-12 columns service-container-new">
+        <div class="small-12 medium-4 columns"><h4 class="post-side-title" id="libguides">The Internet Archive</h4></div>
+        <div class="small-12 medium-8 columns service-list-wrapper">      
+            <ul class="custom-dots">
+                    {% for page in site.archivedotorg %}
+                    <li><a href="{{site.baseurl}}{{ page.url}}">{{page.title}}</a>
+                     </li>
+                      {% endfor %}
+                      </ul>
 
 
->>>>>>> 9ccad894c233a60d32721f8b3f3e29c3c948be21
+ </div>
 
-    </div>
- -->
-
-
-
-
+           
 
 
 </div>
 </div>
+
