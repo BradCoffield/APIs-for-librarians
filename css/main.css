@@ -1,3 +1,37 @@
+ 
+ 
+
+footer {
+     text-align: center;
+         padding: 2em 0;
+        border-top: 1px solid teal;
+        font-family: 'Martel', serif;
+        background: teal;
+        margin-top: 5em;
+        display: flex;
+        align-items: center;
+        font-size: .9rem;
+    }
+    
+    footer a {
+        text-decoration-style: dotted;
+        text-decoration-color: #333;
+        color: black;
+    }
+    footer .fa {
+text-decoration: none;
+    }
+    footer .button {
+        background-color:#555;
+    }
+    footer .button:hover, footer .button:focus {
+        background-color: #333;
+    }
+ 
+    footer input::placeholder, footer textarea::placeholder {
+        color: #333;
+    }
+
 .margin-top-1 {margin-top:1.25rem;}
 
 .custom-dots li::before {
@@ -186,20 +220,7 @@ li {
     font-size: 3em;
 }
 
-footer {
-    text-align: center;
-    padding: 1em 0;
-    border-top: 1px solid teal;
-    font-family: 'Martel', serif;
-    background: teal;
-    margin-top: 5em;
-}
-
-footer a {
-    text-decoration: none;
-    color: black;
-}
-
+ 
 
 /*to style the screenshots*/
 
