@@ -1,8 +1,9 @@
 ---
 layout: implementations
-title: "Naropa Audio Archive - 3 Random Entries"
+title: "Three Random Naropa Entries"
 author: "Brad Coffield"
 author_email: "bcoffield@gmail.com" 
+tags: naropa
 ---
 ## Description
         
