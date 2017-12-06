@@ -19,7 +19,7 @@ This is a screenshot of it inside our libguides.
        
 ### More details
 
-It would be easy to adjust the number of entries displayed either up or down. 
+It would be easy to adjust the number of entries displayed down to one and possible, but not quite easy, to adjust them as high as you would want. 
 
 Overly long item descriptions are being hidden behind a link ("read more"). When clicked that will expand and show the rest of the description. I decided to do this because some of the descriptions were really long and some were quite brief and it the mixture of them looked bad. You can not do this if you choose, or you can modify the number of characters that are permitted to be displayed.
 

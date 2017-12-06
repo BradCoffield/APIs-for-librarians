@@ -19,7 +19,7 @@ This is a screenshot of it inside our libguides.
        
 ### More details
 
-It would be easy to adjust the number of entries displayed either up or down. 
+It would be easy to adjust the number of entries displayed down. 
 
 There is a general description below the entries that comes from the larger description page at the Archive and which isn't necessary for the entries to work. 
 
