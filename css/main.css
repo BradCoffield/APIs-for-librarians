@@ -1,5 +1,10 @@
  
- 
+.flex-center {
+    display: flex;
+    align-items: center;
+    align-content: center;
+     flex-wrap: wrap;
+}
 
 footer {
      text-align: center;
