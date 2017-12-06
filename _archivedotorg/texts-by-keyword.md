@@ -7,9 +7,9 @@ tags: text-collections
 ---
 ## Description
         
-This asks the [archive.org](https://www.archive.org/) API for a list of all of the texts (books, magazines, etc.) returned from a keyword search you specify and then selects two from that list for display. It will select a new set on each page load. 
+This asks the [archive.org](https://www.archive.org/) API for a list of all of the texts (books, magazines, etc.) returned from a keyword search (that you specify) and then selects two from that list for display. It will select a new set on each page load. 
 
-Something like this can help promote seredipitous discovery in your research guides. Also has the benefit of being something that is fresh and constantly changing without you needing to constantly update it.
+Something like this can help promote seredipitous discovery in your research guides. It also has the benefit of being something that is fresh and constantly changing without you needing to constantly update it.
 
  
 
