@@ -9,7 +9,7 @@ tags: text-collections
         
 This asks the [archive.org](https://www.archive.org/) API for a list of all of the [Naropa University Archive Project's](https://archive.org/details/naropa&tab=about) contents and then selects three from that list for display. It will select a new set on each page load. The Naropa archive features poetry readings and lectures from many prominent Beat (literary movement) figures like Allen Ginsburg and Anne Waldman. There's a lot of great content! 
 
-This implementation would be great for a libguide page on the Beat literary movement.
+ 
 
 ### Screenshot
 
@@ -19,9 +19,9 @@ This is a screenshot of it inside our libguides.
        
 ### More details
 
-It would be easy to adjust the number of entries displayed either up or down. There is a description below the entries that comes from the larger description page at the Archive and which isn't necessary for the entries to work. 
+It would be easy to adjust the number of entries displayed either up or down. 
 
-Overly long descriptions are being hidden behind a link ("read more"). When clicked that will expand and show the rest of the description. I decided to do this because some of the descriptions were really long and some were quite brief and it the mixture of them looked bad. You can not do this if you choose, or you can modify the number of characters that are permitted to be displayed.
+Overly long item descriptions are being hidden behind a link ("read more"). When clicked that will expand and show the rest of the description. I decided to do this because some of the descriptions were really long and some were quite brief and it the mixture of them looked bad. You can not do this if you choose, or you can modify the number of characters that are permitted to be displayed.
 
     
 ## The Code
