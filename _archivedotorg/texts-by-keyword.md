@@ -300,7 +300,7 @@ $(document).ready(function() {
     </div></div>
     </li>`);
 
-    <!-- Some items come back with a description of "undefined" and that is ugly so let's check for that and change it if it tries any funny business. -->
+    // Some items come back with a description of "undefined" and that is ugly so let's check for that and change it if it tries any funny business.  
     var bookDescriptions = document.getElementsByClassName("IA-book-description");
         const descMessage = "Description unavailable."
 
