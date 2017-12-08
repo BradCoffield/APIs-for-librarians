@@ -1,5 +1,5 @@
---- 
-layout: default 
+---
+layout: default
 title: 'APIs for Librarians' 
 ---
 
@@ -96,7 +96,7 @@ title: 'APIs for Librarians'
 
 <div class="row margin-top-1">
     <div class="small-12 columns">
-        <h3  >
+        <h3>
             Stands4
         </h3>
     </div>
@@ -123,25 +123,25 @@ title: 'APIs for Librarians'
 
 
 <div class="row margin-top-1">
-        <div class="small-12 columns">
-                <h3 >
-                    The Internet Archive
-                </h3>
-            </div>
+    <div class="small-12 columns">
+        <h3>
+            The Internet Archive
+        </h3>
+    </div>
     <div class="small-12 columns service-container-new">
         <div class="small-12 medium-4 columns">
-            <h4 class="post-side-title">Naropa Audio
-                
+            <h4 class="post-side-title">Audio Collections
+
             </h4>
         </div>
         <div class="small-12 medium-8 columns service-list-wrapper">
             <ul class="custom-dots">
-                {% for page in site.archivedotorg %}
-                {% if page.tags contains "naropa" %}
-                  <li><a href="{{site.baseurl}}{{ page.url}}">{{page.title}}</a></li>
-                {%endif%}
-                {% endfor %}
-               </ul>
+                {% for page in site.archivedotorg %} {% if page.tags contains "audio-collections" %}
+                <li>
+                    <a href="{{site.baseurl}}{{ page.url}}">{{page.title}}</a>
+                </li>
+                {%endif%} {% endfor %}
+            </ul>
 
 
         </div>
@@ -151,17 +151,17 @@ title: 'APIs for Librarians'
     <div class="small-12 columns service-container-new">
         <div class="small-12 medium-4 columns">
             <h4 class="post-side-title">Text Collections
-                
+
             </h4>
         </div>
         <div class="small-12 medium-8 columns service-list-wrapper">
             <ul class="custom-dots">
-                {% for page in site.archivedotorg %}
-                {% if page.tags contains "text-collections" %}
-                  <li><a href="{{site.baseurl}}{{ page.url}}">{{page.title}}</a></li>
-                {%endif%}
-                {% endfor %}
-               </ul>
+                {% for page in site.archivedotorg %} {% if page.tags contains "text-collections" %}
+                <li>
+                    <a href="{{site.baseurl}}{{ page.url}}">{{page.title}}</a>
+                </li>
+                {%endif%} {% endfor %}
+            </ul>
 
         </div>
 

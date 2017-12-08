@@ -1,6 +1,6 @@
 ---
 layout: implementations
-title: "Texts by Keyword"
+title: "All Texts by Keyword"
 author: "Brad Coffield"
 author_email: "bcoffield@gmail.com" 
 tags: text-collections
