@@ -272,31 +272,45 @@ readability (mostly for me). _/
     };
 
 })(jQuery);
-
 //returns a random number from a range function getRandomIntInclusive(min, max)
-{ min = Math.ceil(min); max = Math.floor(max); return
-Math.floor(Math.random() \* (max - min + 1)) + min; } //allows our spinner to be
-seen $("#preloader").show(); $.getJSON(
+{
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return
+    Math.floor(Math.random()\ * (max - min + 1)) + min;
+} //allows our spinner to be
+seen $("#preloader").show();
+$.getJSON(
 "https://archive.org/advancedsearch.php?q=collection%3Anaropa+mediatype%3Aaudio++&fl[]=creator&fl[]=description&fl[]=identifier&fl[]=title&fl[]=year&sort[]=&sort[]=&sort[]=&rows=1000&page=1&output=json&callback=?",
-function(data) { //removes our spinner when the ajax request is being displayed
-$("#preloader").hide(); //selects three different random numbers from within our
-results set amount and ensures none of them match each other let num1, num2,
-num3; let getThreeRandom = function() { num1 = getRandomIntInclusive(0,
-data.response.docs.length); num2 = getRandomIntInclusive(0,
-data.response.docs.length); num3 = getRandomIntInclusive(0,
-data.response.docs.length); if (num1 == num2 || num2 == num3 || num1 == num3) {
-getThreeRandom(); } }; getThreeRandom(data); //these use our random numbers to
-select pieces from our data set and display them on our webpage. Uses
-font-awesome icon fonts $("#naropa-1") .append(`<li class="naropa-item-title"><a
+function (data) { //removes our spinner when the ajax request is being displayed
+    $("#preloader").hide(); //selects three different random numbers from within our
+    results set amount and ensures none of them match each other
+    let num1, num2,
+        num3;
+    let getThreeRandom = function () {
+        num1 = getRandomIntInclusive(0,
+            data.response.docs.length);
+        num2 = getRandomIntInclusive(0,
+            data.response.docs.length);
+        num3 = getRandomIntInclusive(0,
+            data.response.docs.length);
+        if (num1 == num2 || num2 == num3 || num1 == num3) {
+            getThreeRandom();
+        }
+    };
+    getThreeRandom(data); 
+     $("#naropa-1").append(`<li class="naropa-item-title"><a
 href="https://archive.org/details/${data .response.docs[num1].identifier}">
 ${data.response.docs[num1] .title}</a></li> <li
 class="naropa-description">${data.response.docs[num1] .description}</li>`);
-$("#naropa-2") .append(`<li class="naropa-item-title"><a
+    $("#naropa-2").append(`<li class="naropa-item-title"><a
 href="https://archive.org/details/${data .response.docs[num2].identifier}">
 ${data.response.docs[num2] .title}</a></li> <li
 class="naropa-description">${data.response.docs[num2] .description}</li>`);
-$("#naropa-3") .append(`<li class="naropa-item-title"><a
+    $("#naropa-3").append(`<li class="naropa-item-title"><a
 href="https://archive.org/details/${data .response.docs[num3].identifier}">
 ${data.response.docs[num3] .title}</a></li> <li
 class="naropa-description">${data.response.docs[num3] .description}</li>`);
-$(".naropa-description").shorten(); } ); }); {% endhighlight %}
+    $(".naropa-description").shorten();
+});
+});{% endhighlight %}
