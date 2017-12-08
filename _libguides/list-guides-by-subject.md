@@ -55,6 +55,3 @@ $.getJSON('https://lgapi-us.libapps.com/1.1/guides?site_id=foo1&key=foo2&status=
   $('#business-guides').html(businessGuides);
 });
 {% endhighlight %}
-
-#### Comments on the code:
-
