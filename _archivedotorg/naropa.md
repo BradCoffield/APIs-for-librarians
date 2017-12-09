@@ -96,7 +96,9 @@ text-align: center; margin-bottom: 1em; } #naropa-description { margin-top: 1em;
 
 ##### The code itself:
 
-{% highlight javascript linenos %} $(document).ready(function() { /\*
+{% highlight javascript linenos %} $(document).ready(function() { 
+  
+/*
 
 * jQuery Shorten plugin 1.1.0
 *
@@ -104,7 +106,7 @@ text-align: center; margin-bottom: 1em; } #naropa-description { margin-top: 1em;
 * http://viralpatel.net
 *
 * Licensed under the MIT license:
-* http://www.opensource.org/licenses/mit-license.php \*/
+* http://www.opensource.org/licenses/mit-license.php */
 
 /_ ** updated by Jeff Richardson ** Updated to use strict, ** IE 7 has a "bug"
 It is returning undefined when trying to reference string characters in this
