@@ -108,11 +108,7 @@ text-align: center; margin-bottom: 1em; } #naropa-description { margin-top: 1em;
 * Licensed under the MIT license:
 * http://www.opensource.org/licenses/mit-license.php */
 
-/_ ** updated by Jeff Richardson ** Updated to use strict, ** IE 7 has a "bug"
-It is returning undefined when trying to reference string characters in this
-format ** content[i]. IE 7 allows content.charAt(i) This works fine in all
-modern browsers. \** I've also added brackets where they weren't added just for
-readability (mostly for me). _/
+
 
 (function($) { $.fn.shorten = function(settings) { "use strict";
 
