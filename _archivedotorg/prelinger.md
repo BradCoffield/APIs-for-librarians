@@ -88,12 +88,9 @@ The code is vanilla javscript except for the $.getJSON piece from jQuery.
 
 {:.code-notes}
 
-* Lines 20-180: This part of code is what does the description hiding and is
+* Lines 19-179: This part of code is what does the description hiding and is
   from [http://viralpatel.net](http://viralpatel.net).
-* Lines 196-205: Could be removed if you only want to display one result. If so
-  then just add `let num1= getRandomIntInclusive(0, data.response.docs.length);`
-  in their stead.
-* Lines 214-227: Also delete these if you only want one result.
+* Line 213: Modify how many items are displayed by changing `4` to a different number.
 
 ##### The code itself:
 
