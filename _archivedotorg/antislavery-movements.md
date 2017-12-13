@@ -76,58 +76,61 @@ Currently everything is displayed in one vertical column, book after book. It wo
 {:.code-notes}
 
 * Line 33: `getRandomNumbers(4, jsonResponseLength);` To change the number of items displayed change the `4` to any number that doesn't exceed the amount of results from the API.
+* Code updated 12/13/17: No longer uses jQuery and is properly namespaced.
  
 ##### The code itself:
 
-{% highlight javascript linenos %} $(document).ready(function() {
-    //Show our spinny preloader
-    document.getElementById("preloader").style.display = "";
-    //Gets the data
-    $.getJSON(
-      "https://archive.org/advancedsearch.php?q=subject%3A(%22Antislavery+movements+--+United+States%22)&fl[]=creator&fl[]=identifier&fl[]=title&fl[]=year&sort[]=&sort[]=&sort[]=&rows=400&page=1&output=json&callback=?",
-      function(data) {
-          console.log(data);
-        //Removes our preloader
-        document.getElementById("preloader").style.display = "none";
-        let jsonContents = data.response.docs;
-        let jsonResponseLength = data.response.docs.length;
-  
-        //This is the function to generate as many random numbers we want - with the amount of API results as the upper range.
-        var getRandomNumbers = function(howMany, upperLimit) {
-          var limit = howMany,
-            amount = 1,
-            lower_bound = 1,
-            upper_bound = upperLimit,
-            unique_random_numbers = [];
-          if (amount > limit) limit = amount; //Infinite loop if you want more unique natural numbers than exist in a given range
-          while (unique_random_numbers.length < limit) {
-            var random_number = Math.floor(
-              Math.random() * (upper_bound - lower_bound) + lower_bound
-            );
-            if (unique_random_numbers.indexOf(random_number) == -1) {
-              unique_random_numbers.push(random_number);
-            }
-          }
-          return unique_random_numbers;
-        };
-        //This is where we actually specify how many random numbers (and therefore how many books) we want generated.
-        var ourRandoms = getRandomNumbers(4, jsonResponseLength);
-  
-        class AntiSlaveryBook {
-          constructor(theBookStuff) {
-            this.theBookStuff = theBookStuff;
-          }
-          getToAppending() {
-            var domsn = document.getElementById("antislavery-texts");
-            domsn.insertAdjacentHTML("beforeend", this.theBookStuff);
-          }
+{% highlight javascript linenos %} var apis4librarians_AntislaveryMovements = (function() {
+  //Show our spinny preloader
+  document.getElementById("preloader").style.display = "";
+  //Gets the data
+  var scriptEl = document.createElement("script");
+  scriptEl.setAttribute(
+    "src",
+    "https://archive.org/advancedsearch.php?q=subject%3A(%22Antislavery+movements+--+United+States%22)&fl[]=creator&fl[]=identifier&fl[]=title&fl[]=year&sort[]=&sort[]=&sort[]=&rows=400&page=1&output=json&callback=JSONPcallback"
+  );
+  document.body.appendChild(scriptEl);
+  window.JSONPcallback = function(data) {
+    //Removes our preloader
+    document.getElementById("preloader").style.display = "none";
+    let jsonContents = data.response.docs;
+    let jsonResponseLength = data.response.docs.length;
+    //This is the function to generate as many random numbers we want - with the amount of API results as the upper range.
+    var getRandomNumbers = function(howMany, upperLimit) {
+      var limit = howMany,
+        amount = 1,
+        lower_bound = 1,
+        upper_bound = upperLimit,
+        unique_random_numbers = [];
+      if (amount > limit) limit = amount; //Infinite loop if you want more unique natural numbers than exist in a given range
+      while (unique_random_numbers.length < limit) {
+        var random_number = Math.floor(
+          Math.random() * (upper_bound - lower_bound) + lower_bound
+        );
+        if (unique_random_numbers.indexOf(random_number) == -1) {
+          unique_random_numbers.push(random_number);
         }
-        for (i = 0; i < ourRandoms.length; i++) {
-          let theBookStuff = `<li class=flexy-container><div class="left"><div class="AS-pic"><a href="https://archive.org/details/${
-            jsonContents[ourRandoms[i]].identifier
-          }"><img src="https://archive.org/services/img/${
-            jsonContents[ourRandoms[i]].identifier
-          }"></a></div></div><div class="right">
+      }
+      return unique_random_numbers;
+    };
+    //This is where we actually specify how many random numbers (and therefore how many books) we want generated.
+    var ourRandoms = getRandomNumbers(4, jsonResponseLength);
+
+    class AntiSlaveryBook {
+      constructor(theBookStuff) {
+        this.theBookStuff = theBookStuff;
+      }
+      getToAppending() {
+        var domsn = document.getElementById("antislavery-texts");
+        domsn.insertAdjacentHTML("beforeend", this.theBookStuff);
+      }
+    }
+    for (i = 0; i < ourRandoms.length; i++) {
+      let theBookStuff = `<li class=flexy-container><div class="left"><div class="AS-pic"><a href="https://archive.org/details/${
+        jsonContents[ourRandoms[i]].identifier
+      }"><img src="https://archive.org/services/img/${
+        jsonContents[ourRandoms[i]].identifier
+      }"></a></div></div><div class="right">
         <div class="AS-title"><a href="https://archive.org/details/${
           jsonContents[ourRandoms[i]].identifier
         }">${jsonContents[ourRandoms[i]].title}</a></div>
@@ -140,11 +143,10 @@ Currently everything is displayed in one vertical column, book after book. It wo
  
         </div>
         </li>`;
-  
-          let ttttt = new AntiSlaveryBook(theBookStuff);
-          ttttt.getToAppending();
-        }
-         
-      }
-    );
-  });{% endhighlight %}
+
+      let ttttt = new AntiSlaveryBook(theBookStuff);
+      ttttt.getToAppending();
+    }
+  };
+})();
+{% endhighlight %}
