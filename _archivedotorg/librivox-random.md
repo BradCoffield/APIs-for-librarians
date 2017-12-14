@@ -24,8 +24,8 @@ The styles included here use flexbox to display each book image to the left of t
 
 Currently everything is displayed in one vertical column. It would be possible to have items in multiple vertical columns but doing that would depend on the code situation of where you were using it. If you want multiple columns, I'm willing to help so just contact the project using the form in the footer of this page.
 
-Overly long item descriptions are being hidden behind a link ("read more"). When
-clicked that will expand and show the rest of the description. You can choose to not do this, or you can modify the number of characters that are permitted to be displayed.
+Descriptions are started but then hidden behind a 'Read More/Less' link which, when
+clicked, will expand and show the rest of the description. Some descriptions are very long and our code helps ensure a consistent visual style while still giving the use access the information they may desire.
 
 ## The Code
 
@@ -35,7 +35,7 @@ clicked that will expand and show the rest of the description. You can choose to
 
 * Just our spinny preloader (which isn't necessary) and the `<ul>` that will be populated by our javascript
   
-{% highlight html linenos %} <img src="/assets/img/Eclipse.gif" alt="" id="preloader" style="display:none;">
+{% highlight html linenos %}<img src="/assets/img/Eclipse.gif" alt="" id="preloader" style="display:none;">
 <ul id="librivox"></ul>
 {% endhighlight %}
 
@@ -47,6 +47,7 @@ clicked that will expand and show the rest of the description. You can choose to
   the right.
 * The media query makes it so that on small screens the text switches to below
   the image.
+* `.ellip` is necessary to have the description hiding/showing.
 * You probably have your fonts set but the screenshot uses "Martel" which is available from Google Fonts.
 
 {% highlight css linenos %}body {
@@ -92,11 +93,11 @@ clicked that will expand and show the rest of the description. You can choose to
 
 {:.code-notes}
 
-* Line : This is our request to the archive. We're concerned with `q=shakespeare+downloads%3A[1+TO+1000000000]+collection%3Alibrivoxaudio` We can modify a couple things in this line.
+* Line 8: This is our request to the archive. We're concerned with `q=shakespeare+downloads%3A[1+TO+1000000000]+collection%3Alibrivoxaudio` We can modify a couple things in this line.
   * To change the topic: Replace `shakespeare` with something else. You can't use actual spaces here. If you want multiple words put a + between them e.g. `william+shakespeare`.
   * To remove the topic: You can remove Shakespeare altogether so it would be `q=downloads`
   * To only get popular things: 
-* Line 32: `getRandomNumbers(4, jsonResponseLength);` To change the number of items displayed change the `4` to any number that doesn't exceed the amount of results from the API.
+* Line 38: `getRandomNumbers(4, jsonResponseLength);` To change the number of items displayed change the `4` to any number that doesn't exceed the amount of results from the API.
 * Code updated 12/14/17 to use pure JavaScript and properly namespace itself.
 
 ##### The code itself:
@@ -168,10 +169,11 @@ clicked that will expand and show the rest of the description. You can choose to
 
  </div>
  </li>`;
-
+      //Builds a new object for each item and then places it on our webpage.
       let ttttt = new LibrivoxBook(theBookStuff);
       ttttt.getToAppending();
     }
+    //This is where our description hiding/showing is happening.
     document.body.addEventListener("click", e => {
       if (!e.target.classList.contains("description-toggler")) return;
       console.log(e.target.nextSibling);
