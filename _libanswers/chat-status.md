@@ -63,7 +63,7 @@ SpringShare does have a button widget that does essentially the same thing as th
 ##### The code itself:
 {% highlight javascript linenos %}
  $(document).ready(function () {
-    $.getJSON("https://api2.libanswers.com/1.0/chat/widgets/status/1234", function (json) {
+    $.getJSON("https://api2.libanswers.com/1.0/chat/widgets/status/iid=1234", function (json) {
         if (json.online === true) {
             $('#chat-status').html('<br/><p id="chat-online"><a href="PUT_YOUR_CHAT_LINK_URL_HERE">Online!</a></p>');
         } else {
