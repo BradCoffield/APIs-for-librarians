@@ -167,3 +167,29 @@ title: 'APIs for Librarians'
 
     </div>
 </div>
+
+<div class="row margin-top-1">
+    <div class="small-12 columns">
+        <h3>
+            Wordnik
+        </h3>
+    </div>
+    <div class="small-12 columns service-container-new">
+        <div class="small-12 medium-4 columns">
+            <h4 class="post-side-title">Fun with words
+
+            </h4>
+        </div>
+        <div class="small-12 medium-8 columns service-list-wrapper">
+            <ul class="custom-dots">
+                {% for page in site.wordnik %}  
+                <li>
+                    <a href="{{site.baseurl}}{{ page.url}}">{{page.title}}</a>
+                </li>
+                  {% endfor %}
+            </ul>
+
+
+        </div>
+
+    </div></div>

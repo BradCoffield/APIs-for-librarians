@@ -20,5 +20,7 @@ collections:
     output: true
   archivedotorg:
     output: true
+  wordnik:
+    output: true
 
         
