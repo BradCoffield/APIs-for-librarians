@@ -69,7 +69,7 @@ Currently everything is displayed in one vertical column, book after book. It wo
   font-size: 1.1em;
 } {% endhighlight %}
 
-#### JavaScript/jQuery
+#### JavaScript
 
 ##### Notes for implementation:
 
