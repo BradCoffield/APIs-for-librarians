@@ -46,12 +46,12 @@ You link up the jQuery and your actual HTML using a specific ID name in your HTM
 ##### The code itself:
 {% highlight javascript linenos %}
 
-$.getJSON('https://lgapi-us.libapps.com/1.1/guides?site_id=foo1&key=foo2&status=1&subject_ids=38607', function (result) {
+let apis4librarians_guidesBySubject = function(){$.getJSON('https://lgapi-us.libapps.com/1.1/guides?site_id=foo1&key=foo2&status=1&subject_ids=38607', function (result) {
   var businessGuides = $.map(result, function (guidesData, index) {
     var listItem = $('<li></li>');
     $('<a href=/"' + guidesData.url + '/">' + guidesData.name + '</a>').appendTo(listItem);
     return listItem;
   });
   $('#business-guides').html(businessGuides);
-});
+});}();
 {% endhighlight %}

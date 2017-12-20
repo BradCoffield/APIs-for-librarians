@@ -54,10 +54,10 @@ A few things to know. First, you need to have your hours properly setup inside L
 
 ##### The code itself:
 {% highlight javascript linenos %}
- $(document).ready(function () {
+ let apis4librarians_todayshours = function(){$(document).ready(function () {
     $.getJSON("https://api3.libcal.com/api_hours_today.php?iid=000&lid=0&format=json&systemTime=0&callback=?", function (json) {
         $('#todays-hours').append("<span id='todays-hours-text'>Today's hours:</span> " + "<span id=todays-hours-hours>" + json.locations[0].rendered + "</span");
     });
-});{% endhighlight %}
+});}();{% endhighlight %}
 
 

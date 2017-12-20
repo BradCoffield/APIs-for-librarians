@@ -72,7 +72,7 @@ Another option would be to create your own set of quotes and build them into a J
 
 ##### The code itself:
 {% highlight javascript linenos %}
-$(document).ready(function() {
+let apis4librarians_quotesdotnet = function(){$(document).ready(function() {
   //converts XML to JSON
   function xmlToJson(xml) {
     var obj = {};
@@ -153,6 +153,6 @@ $(document).ready(function() {
     });
   };
   getRandomQuote();
-});
+});}();
 {% endhighlight %}
 
