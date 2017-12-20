@@ -48,7 +48,7 @@ body{font-family: 'Martel'}
 ##### Notes for implementation:
 
 {:.code-notes}
-* Line :
+* Line 24: Replace `YOUR_API_KEY_HERE` with the API key given to you by Wordnik. Acquire it at their [developer site](http://developer.wordnik.com/).
 
 ##### The code itself:
 {% highlight javascript linenos %}let apis4librarians_wordnikofdaySimple = function(){function reqListener() {
