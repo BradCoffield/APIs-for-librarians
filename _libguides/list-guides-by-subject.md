@@ -38,9 +38,10 @@ You link up the jQuery and your actual HTML using a specific ID name in your HTM
 ##### Notes for implementation:
 
 {:.code-notes}
-* `foo1` and `foo2` are placeholders. Fill these in with the information provided by Springshare.
+* To get some of the information that you'll need below you'll need to login to the admin area of your LibGuides. In the orange bar click Tools > API > Endpoints v1.1 > GET Guides. 
+* `foo1` and `foo2` are placeholders for site id and your authorization key. Fill these in with the information provided by Springshare.
 * `status=1` refers to published guides.
-* `subject_ids=38607` refers to the specific code for the subject 'business' in our system. You'll need to replace that number.
+* `subject_ids=38607` refers to the specific code for the subject 'business' in our system. You'll need to replace that number. You can find the information you need by going to Admin > Metadata & URLs. You'll be on the page that lists your system's subjects and in the left column is the ID.
 * The `#business-guides` is what links your JS to your HTML. The ID here needs to match the ID of the UL in your code.
 
 ##### The code itself:
