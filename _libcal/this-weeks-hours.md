@@ -67,6 +67,7 @@ font-weight: bold;
 
 {:.code-notes}
 
+* You will need to go to your LibCal admin area. Admin > Hours > Widgets > Weekly Data. And then "Generate Code Preview." This will provide you with the information you need below.
 * Line 3: Your `iid=000` will have a different number.
 * Line 3: `https://api3.libcal.com/api_hours_today.php?iid=000&lid=0&format=json&systemTime=0&callback=?` is the link you'll generate through your LibCal admin area. Note the added `&callback=?`
 * Lines 49-76: Optional. This code will detect what day of the week it is (on page load) and apply a class to that day so you can highlight it in some way.
