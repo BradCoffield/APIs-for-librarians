@@ -20,7 +20,7 @@ The code below filters their content for things that are highly rated by users a
 
 Overly long item descriptions are being hidden behind a link ("read more"). When
 clicked that will expand and show the rest of the description. I decided to do
-this because some of the descriptions are quite long. 
+this because some of the descriptions are quite long.
 
 The code is vanilla javscript except for the $.getJSON piece from jQuery.
 
@@ -33,10 +33,11 @@ The code is vanilla javscript except for the $.getJSON piece from jQuery.
 * I downloaded an animated gif spinner that will display while the API
   is working and before the results have loaded. You don't have to do this but
   it does give a visual cue to the user that something is happening behind the
-  scenes. 
-  
+  scenes.
+
   {% highlight html linenos %}
   <img src="/assets/img/Eclipse.gif" alt="" id="preloader" style="display:none;">
+
   <ul id="prelinger"></ul>
 
 {% endhighlight %}
@@ -51,35 +52,35 @@ The code is vanilla javscript except for the $.getJSON piece from jQuery.
   the image.
 
 {% highlight css linenos %} .flexy-container {
-  display: flex;
-  align-items: center;
-  margin-bottom: .75em;
-  font-family: "Martel";
-  color: #333;
-  font-size: 16px;
+display: flex;
+align-items: center;
+margin-bottom: .75em;
+font-family: "Martel";
+color: #333;
+font-size: 16px;
 }
 .flexy-container .left {
-  padding: 1rem;
+padding: 1rem;
 }
 @media (max-width: 500px) {
-  .flexy-container {
-    flex-wrap: wrap;
-  }
-  .flexy-container img {
-    display: block;
-    margin: 0 auto;
-  }
+.flexy-container {
+flex-wrap: wrap;
+}
+.flexy-container img {
+display: block;
+margin: 0 auto;
+}
 }
 .flexy-container a {
-  text-decoration: dotted underline gray;
-  color: #333;
+text-decoration: dotted underline gray;
+color: #333;
 }
 .prelinger-title {
-  font-weight: bold;
-  font-size: 1.1em;
+font-weight: bold;
+font-size: 1.1em;
 }
 .prelinger-pic img {
-  max-width: 180px;
+max-width: 180px;
 }{% endhighlight %}
 
 #### JavaScript/jQuery
@@ -94,27 +95,28 @@ The code is vanilla javscript except for the $.getJSON piece from jQuery.
 
 ##### The code itself:
 
-{% highlight javascript linenos %} 
-/*
- * jQuery Shorten plugin 1.1.0
- *
- * Copyright (c) 2014 Viral Patel
- * http://viralpatel.net
- *
- * Licensed under the MIT license:
- *   http://www.opensource.org/licenses/mit-license.php
- */
+{% highlight javascript linenos %}
+/\*
 
-/*
+* jQuery Shorten plugin 1.1.0
+*
+* Copyright (c) 2014 Viral Patel
+* http://viralpatel.net
+*
+* Licensed under the MIT license:
+* http://www.opensource.org/licenses/mit-license.php
+  \*/
+
+/_
 ** updated by Jeff Richardson
 ** Updated to use strict,
 ** IE 7 has a "bug" It is returning undefined when trying to reference string characters in this format
 ** content[i]. IE 7 allows content.charAt(i) This works fine in all modern browsers.
-** I've also added brackets where they weren't added just for readability (mostly for me).
-*/
+\*\* I've also added brackets where they weren't added just for readability (mostly for me).
+_/
 (function($) {
-  $.fn.shorten = function(settings) {
-    "use strict";
+$.fn.shorten = function(settings) {
+"use strict";
 
     var config = {
       showChars: 100,
@@ -271,21 +273,22 @@ The code is vanilla javscript except for the $.getJSON piece from jQuery.
         $(".shortcontent p:last", $this).css("margin-bottom", 0); //Remove bottom margin on last paragraph as it's likely shortened
       }
     });
-  };
+
+};
 })(jQuery);
 
 $(document).ready(function() {
-  //Show our spinny preloader
-  document.getElementById("preloader").style.display = "";
-  //Gets the data
-  $.getJSON(
-    "https://archive.org/advancedsearch.php?q=collection%3Aprelinger+avg_rating%3A[4.50+TO+5.00]&fl[]=avg_rating&fl[]=creator&fl[]=description&fl[]=identifier&fl[]=title&fl[]=year&sort[]=&sort[]=&sort[]=&rows=550&page=1&output=json&callback=?",
-    function(data) {
-      console.log(data);
-      //Removes our preloader
-      document.getElementById("preloader").style.display = "none";
-      let jsonContents = data.response.docs;
-      let jsonResponseLength = data.response.docs.length;
+//Show our spinny preloader
+document.getElementById("preloader").style.display = "";
+//Gets the data
+$.getJSON(
+"https://archive.org/advancedsearch.php?q=collection%3Aprelinger+avg_rating%3A[4.50+TO+5.00]&fl[]=avg_rating&fl[]=creator&fl[]=description&fl[]=identifier&fl[]=title&fl[]=year&sort[]=&sort[]=&sort[]=&rows=550&page=1&output=json&callback=?",
+function(data) {
+console.log(data);
+//Removes our preloader
+document.getElementById("preloader").style.display = "none";
+varjsonContents = data.response.docs;
+varjsonResponseLength = data.response.docs.length;
 
       //This is the function to generate as many random numbers we want - with the amount of API results as the upper range.
       var getRandomNumbers = function(howMany, upperLimit) {
@@ -318,7 +321,7 @@ $(document).ready(function() {
         }
       }
       for (i = 0; i < ourRandoms.length; i++) {
-        let theBookStuff = `<li class=flexy-container><div class="left"><div class="prelinger-pic"><a href="https://archive.org/details/${
+        vartheBookStuff = `<li class=flexy-container><div class="left"><div class="prelinger-pic"><a href="https://archive.org/details/${
           jsonContents[ourRandoms[i]].identifier
         }"><img src="https://archive.org/services/img/${
           jsonContents[ourRandoms[i]].identifier
@@ -338,16 +341,17 @@ $(document).ready(function() {
         <div class="prelinger-description">Description: ${
           jsonContents[ourRandoms[i]].description
         }</div>
- 
+
         </div>
         </li>`;
 
-        let ttttt = new PrelingerVideo(theBookStuff);
+        varttttt = new PrelingerVideo(theBookStuff);
         ttttt.getToAppending();
       }
       $(".prelinger-description").shorten();
     }
-  );
+
+);
 });
 
 {% endhighlight %}

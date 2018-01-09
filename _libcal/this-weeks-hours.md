@@ -75,13 +75,13 @@ font-weight: bold;
 ##### The code itself:
 
 {% highlight javascript linenos %}
-let apis4librarians_WeeksHours = (function() {
+varapis4librarians_WeeksHours = (function() {
   $.getJSON(
     "https://api3.libcal.com/api_hours_grid.php?iid=000&format=json&weeks=1&systemTime=0&callback=?",
     function(json) {
       class DaysHours {
         constructor(singleDay) {
-          let theDate;
+          vartheDate;
           //process and clean up the input
           if (singleDay.date[5] === "0") {
             this.theDate = singleDay.date.substr(6);
@@ -118,12 +118,12 @@ let apis4librarians_WeeksHours = (function() {
       const locationDays = json.locations[0].weeks[0];
       const daysRendered = {};
 
-      for (let day of daysOfTheWeek) {
-        let dayToRender = new DaysHours(locationDays[day]);
-        let key = `${day}_stuff`;
+      for (varday of daysOfTheWeek) {
+        vardayToRender = new DaysHours(locationDays[day]);
+        varkey = `${day}_stuff`;
         daysRendered[key] = dayToRender.renderMe(day);
       }
-      let highlightDay = (function() {
+      varhighlightDay = (function() {
         //if you would like the hours for today marked in some way use the below and then style with .its-today
         var d = new Date();
         var n = d.getDay();

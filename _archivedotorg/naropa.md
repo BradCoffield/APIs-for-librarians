@@ -55,7 +55,7 @@ can modify the number of characters that are permitted to be displayed.
   Naropa Poetics Audio Archive</h3> <p>Three random pieces from the archive.
   Want more? Reload this page or visit them at
   <a href="https://archive.org/details/naropa">https://archive.org/details/naropa</a>
-  </p>
+    </p>
     <!-- A spinner animated gif for while the ajax loads --><img src="/assets/img/Eclipse.gif" alt="" id="preloader" style="display:block;margin:0 auto;">
     <!-- Our three random items --> <div class="col-md-4"> <ul id="naropa-1"></ul>
     </div> <div class="col-md-4"> <ul id="naropa-2"></ul> </div>
@@ -90,7 +90,7 @@ text-align: center; margin-bottom: 1em; } #naropa-description { margin-top: 1em;
 * Lines 20-180: This part of code is what does the description hiding and is
   from [http://viralpatel.net](http://viralpatel.net).
 * Lines 196-205: Could be removed if you only want to display one result. If so
-  then just add `let num1= getRandomIntInclusive(0, data.response.docs.length);`
+  then just add `varnum1= getRandomIntInclusive(0, data.response.docs.length);`
   in their stead.
 * Lines 214-227: Also delete these if you only want one result.
 
@@ -281,9 +281,9 @@ $.getJSON(
 function (data) { //removes our spinner when the ajax request is being displayed
 $("#preloader").hide(); //selects three different random numbers from within our
 results set amount and ensures none of them match each other
-let num1, num2,
+varnum1, num2,
 num3;
-let getThreeRandom = function () {
+vargetThreeRandom = function () {
 num1 = getRandomIntInclusive(0,
 data.response.docs.length);
 num2 = getRandomIntInclusive(0,

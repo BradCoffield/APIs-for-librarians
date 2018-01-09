@@ -74,17 +74,19 @@ underline gray;color:#333;}
   these. But you don't have to. `+` signs have to go where spaces would be. So, instead of what's there you could put `q=alien+jellybeans` and that would work as expected, not searching for them as a phrase.
 
 ##### The code itself:
+
 {% highlight javascript linenos %}
 $(document).ready(function() {
-  /*
- * jQuery Shorten plugin 1.1.0
- *
- * Copyright (c) 2014 Viral Patel
- * http://viralpatel.net
- *
- * Licensed under the MIT license:
- *   http://www.opensource.org/licenses/mit-license.php
- */
+/\*
+
+* jQuery Shorten plugin 1.1.0
+*
+* Copyright (c) 2014 Viral Patel
+* http://viralpatel.net
+*
+* Licensed under the MIT license:
+* http://www.opensource.org/licenses/mit-license.php
+  \*/
 
 
     /*
@@ -270,7 +272,7 @@ $(document).ready(function() {
       // Removes our spinner once the ajax request is being displayed
         $("#preloader").hide();
       //Get two random non-identical numbers
-        let num1, num2;
+        varnum1, num2;
         const getTwoRandom = function () {
             num1 = getRandomIntInclusive(0, data.response.docs.length);
             num2 = getRandomIntInclusive(0, data.response.docs.length);
@@ -304,7 +306,7 @@ $(document).ready(function() {
     var bookDescriptions = document.getElementsByClassName("IA-book-description");
         const descMessage = "Description unavailable."
 
-        for (let element of bookDescriptions) {
+        for (varelement of bookDescriptions) {
             if (element.innerHTML == "undefined" || undefined) {
                 element.innerHTML = descMessage;
             }
