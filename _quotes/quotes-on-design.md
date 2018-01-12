@@ -12,7 +12,7 @@ tags: quotesdesign
 
 The code below will query their API and display a new quote each time the page its on is reloaded. Have fun!
 
-### Screenshot
+### Screenshots
 
 ![{{page.title}} screenshot]({{site.baseurl}}/assets/{{page.title}}-screenshot.jpg){:.screenshot}
 ![{{page.title}} screenshot]({{site.baseurl}}/assets/{{page.title}}-screenshot-1.jpg){:.screenshot}
