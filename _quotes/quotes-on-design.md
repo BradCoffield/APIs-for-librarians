@@ -1,6 +1,6 @@
 ---
 layout: implementations
-title: "Random Quote - Quotes on Design"
+title: "Random Design Quote"
 author: "Brad Coffield"
 author_email: "bcoffield@gmail.com"
 tags: quotesdesign

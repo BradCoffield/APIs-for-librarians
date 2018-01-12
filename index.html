@@ -108,10 +108,11 @@ title: 'APIs for Librarians'
             <ul class="custom-dots">
 
                 {% for page in site.quotes %}
+                {% if page.tags contains "quotesnet" %}
                 <li style="list-style-type: none;">
                     <a href="{{site.baseurl}}{{ page.url}}">{{page.title}}</a>
                 </li>
-                {% endfor %}
+                {%endif%} {% endfor %}
 
 
 
@@ -119,6 +120,23 @@ title: 'APIs for Librarians'
         </div>
 
     </div>
+    <div class="small-12 columns service-container-new">
+        <div class="small-12 medium-4 columns">
+            <h4 class="post-side-title">Quotes on Design
+
+            </h4>
+        </div>
+        <div class="small-12 medium-8 columns service-list-wrapper">
+            <ul class="custom-dots">
+                {% for page in site.quotes %} {% if page.tags contains "quotesdesign" %}
+                <li>
+                    <a href="{{site.baseurl}}{{ page.url}}">{{page.title}}</a>
+                </li>
+                {%endif%} {% endfor %}
+            </ul>
+
+
+        </div>
 </div>
 
 
