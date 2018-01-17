@@ -138,5 +138,5 @@ font-size: 1.1em;
   }
 );
 
-});}();
+});};APIS4LIBS_antislaverymovements();
 {% endhighlight %}
