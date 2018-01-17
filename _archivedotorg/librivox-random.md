@@ -83,6 +83,7 @@ $(document).ready(function() {
  * Licensed under the MIT license:
  *   http://www.opensource.org/licenses/mit-license.php
  */
+
 /*
 ** updated by Jeff Richardson
 ** Updated to use strict,
@@ -90,9 +91,11 @@ $(document).ready(function() {
 ** content[i]. IE 7 allows content.charAt(i) This works fine in all modern browsers.
 ** I've also added brackets where they weren't added just for readability (mostly for me).
 */
+
 (function($) {
   $.fn.shorten = function(settings) {
     "use strict";
+
     var config = {
       showChars: 100,
       minHideChars: 10,
@@ -104,14 +107,18 @@ $(document).ready(function() {
       errMsg: null,
       force: false
     };
+
     if (settings) {
       $.extend(config, settings);
     }
+
     if ($(this).data("jquery.shorten") && !config.force) {
       return false;
     }
     $(this).data("jquery.shorten", true);
+
     $(document).off("click", ".morelink");
+
     $(document).on(
       {
         click: function() {
@@ -154,8 +161,10 @@ $(document).ready(function() {
       },
       ".morelink"
     );
+
     return this.each(function() {
       var $this = $(this);
+
       var content = $this.html();
       var contentlen = $this.text().length;
       if (contentlen > config.showChars + config.minHideChars) {
@@ -167,11 +176,14 @@ $(document).ready(function() {
           var countChars = 0; // Current bag size
           var openTags = []; // Stack for opened tags, so I can close them later
           var tagName = null;
+
           for (var i = 0, r = 0; r <= config.showChars; i++) {
             if (content[i] == "<" && !inTag) {
               inTag = true;
+
               // This could be "tag" or "/tag"
               tagName = content.substring(i + 1, content.indexOf(">", i));
+
               // If its a closing tag
               if (tagName[0] == "/") {
                 if (tagName != "/" + openTags[0]) {
@@ -190,6 +202,7 @@ $(document).ready(function() {
             if (inTag && content[i] == ">") {
               inTag = false;
             }
+
             if (inTag) {
               bag += content.charAt(i);
             } else {
@@ -207,6 +220,7 @@ $(document).ready(function() {
                   for (j = 0; j < openTags.length; j++) {
                     //console.log('Cierro tag ' + openTags[j]);
                     bag += "</" + openTags[j] + ">"; // Close all tags that were opened
+
                     // You could shift the tag from the stack to check if you end with an empty stack, that means you have closed all open tags
                   }
                   break;
@@ -222,6 +236,7 @@ $(document).ready(function() {
         } else {
           c += config.ellipsesText;
         }
+
         var html =
           '<div class="shortcontent">' +
           c +
@@ -230,6 +245,7 @@ $(document).ready(function() {
           '</div><span><a href="javascript://nop/" class="morelink">' +
           config.moreText +
           "</a></span>";
+
         $this.html(html);
         $this.find(".allcontent").hide(); // Hide all text
         $(".shortcontent p:last", $this).css("margin-bottom", 0); //Remove bottom margin on last paragraph as it's likely shortened
@@ -241,14 +257,14 @@ $(document).ready(function() {
   
   
   //Show our spinny preloader
-    document.getElementById("preloader").style.display = "";
+    //document.getElementById("preloader").style.display = "";
     //Gets the data
     $.getJSON(
       "https://archive.org/advancedsearch.php?q=shakespeare+downloads%3A[1+TO+1000000000]+collection%3Alibrivoxaudio&fl[]=creator&fl[]=description&fl[]=downloads&fl[]=identifier&fl[]=title&sort[]=&sort[]=&sort[]=&rows=1000&page=1&output=json&callback=?",
       function(data) {
           console.log(data);
         //Removes our preloader
-        document.getElementById("preloader").style.display = "none";
+        //document.getElementById("preloader").style.display = "none";
         let jsonContents = data.response.docs;
         let jsonResponseLength = data.response.docs.length;
   
@@ -309,4 +325,5 @@ $(document).ready(function() {
       }
     );
   });
-});{% endhighlight %}
+
+{% endhighlight %}
