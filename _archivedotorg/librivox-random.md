@@ -66,10 +66,10 @@ clicked that will expand and show the rest of the description. You can choose to
 {:.code-notes}
 * Lines 20-180: This part of code is what does the description hiding and is
   from [http://viralpatel.net](http://viralpatel.net).
-* Line : This is our request to the archive. We're concerned with `q=shakespeare+downloads%3A[1+TO+1000000000]+collection%3Alibrivoxaudio` We can modify a couple things in this line.
+* Line : This is our request to the archive. We're concerned with `q=shakespeare+downloads%3A[1+TO+1000000000]+collection%3Alibrivoxaudio` 
+* We can modify a couple things in this line.
   * To change the topic: Replace `shakespeare` with something else. You can't use actual spaces here. If you want multiple words put a + between them e.g. `william+shakespeare`.
   * To remove the topic: You can remove Shakespeare altogether so it would be `q=downloads`
-  * To only get popular things: 
 * Line 32: `getRandomNumbers(4, jsonResponseLength);` To change the number of items displayed change the `4` to any number that doesn't exceed the amount of results from the API.
 ##### The code itself:
 {% highlight javascript linenos %} 
