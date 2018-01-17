@@ -38,9 +38,9 @@ can modify the number of characters that are permitted to be displayed.
 
 {:.code-notes}
 
-* Basically just our spinny preloader (which isn't essential) and the blank
-  `<ul>` our JS will work with. {% highlight html linenos %}
-  <img src="/assets/img/Eclipse.gif" alt="" id="preloader">
+* Just the empty `<ul>` our JS will work with. 
+{% highlight html linenos %}
+ 
   <ul id="IA-books"></ul> {% endhighlight %}
 
 #### CSS
@@ -76,18 +76,17 @@ underline gray;color:#333;}
 ##### The code itself:
 
 {% highlight javascript linenos %}
-$(document).ready(function() {
-/\*
 
-* jQuery Shorten plugin 1.1.0
-*
-* Copyright (c) 2014 Viral Patel
-* http://viralpatel.net
-*
-* Licensed under the MIT license:
-* http://www.opensource.org/licenses/mit-license.php
-  \*/
-
+$(document).ready(function () {
+    /*
+     * jQuery Shorten plugin 1.1.0
+     *
+     * Copyright (c) 2014 Viral Patel
+     * http://viralpatel.net
+     *
+     * Licensed under the MIT license:
+     *   http://www.opensource.org/licenses/mit-license.php
+     */
 
     /*
      ** updated by Jeff Richardson
@@ -257,7 +256,10 @@ $(document).ready(function() {
                     $this.html(html);
                     $this.find(".allcontent").hide(); // Hide all text
                     $(".shortcontent p:last", $this).css("margin-bottom", 0); //Remove bottom margin on last paragraph as it's likely shortened
-                } }); }; })(jQuery);
+                }
+            });
+        };
+    })(jQuery);
 
     //returns a random number from a range
     function getRandomIntInclusive(min, max) {
@@ -266,29 +268,37 @@ $(document).ready(function() {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
     // Shows our spinner
-      $("#preloader").show();
+    //$("#preloader").show();
+
+
 
     $.getJSON("https://archive.org/advancedsearch.php?q=%22beat+generation%22++mediatype%3Atexts&fl%5B%5D=creator&fl%5B%5D=description&fl%5B%5D=identifier&fl%5B%5D=publisher&fl%5B%5D=title&sort%5B%5D=&sort%5B%5D=&sort%5B%5D=&rows=500&page=1&output=json&callback=?", function (data) {
-      // Removes our spinner once the ajax request is being displayed
-        $("#preloader").hide();
-      //Get two random non-identical numbers
-        varnum1, num2;
+        // Removes our spinner once the ajax request is being displayed
+       // $("#preloader").hide();
+
+
+
+        //Get two random non-identical numbers
+        let num1, num2;
         const getTwoRandom = function () {
             num1 = getRandomIntInclusive(0, data.response.docs.length);
             num2 = getRandomIntInclusive(0, data.response.docs.length);
+
             if (num1 == num2) {
-                getTwoRandom();}
+                getTwoRandom();
+            }
         };
         getTwoRandom(data);
 
-    //Let's place our books on the page
+        //Let's place our books on the page
+
         $("#IA-books").append(`<li class=flexy-container>
     <div class="left"><div class="IA-book-image"><a href="https://archive.org/details/${data.response.docs[num1].identifier}"><img src="https://archive.org/services/img/${
       data.response.docs[num1].identifier
     }"></a></div></div>
 
     <div class="right"><div class="IA-book-title"><h4> <a href="https://archive.org/details/${data.response.docs[num1].identifier}"> ${data.response.docs[num1].title}</a></h4>
-    <h5>Description:</h5><p class="IA-book-description">${data.response.docs[num1].description}</p>
+    <h4>Description:</h4><p class="IA-book-description">${data.response.docs[num1].description}</p>
     </div></div>
     </li>`);
 
@@ -298,21 +308,12 @@ $(document).ready(function() {
     }"></a></div></div>
 
     <div class="right"><div class="IA-book-title"><h4> <a href="https://archive.org/details/${data.response.docs[num1].identifier}"> ${data.response.docs[num2].title}</a></h4>
-    <h5>Description:</h5><p class="IA-book-description">${data.response.docs[num2].description}</p>
+    <h4>Description:</h4><p class="IA-book-description">${data.response.docs[num2].description}</p>
     </div></div>
     </li>`);
 
-    // Some items come back with a description of "undefined" and that is ugly so let's check for that and change it if it tries any funny business.  
-    var bookDescriptions = document.getElementsByClassName("IA-book-description");
-        const descMessage = "Description unavailable."
-
-        for (varelement of bookDescriptions) {
-            if (element.innerHTML == "undefined" || undefined) {
-                element.innerHTML = descMessage;
-            }
-        }
-        //This actually shortens long descriptions.
+ 
         $(".IA-book-description").shorten();
     });
-
-}); {% endhighlight %}
+});
+  {% endhighlight %}
