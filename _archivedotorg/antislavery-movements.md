@@ -75,12 +75,12 @@ font-size: 1.1em;
 
 {:.code-notes}
 
-* Line 33: `getRandomNumbers(4, jsonResponseLength);` To change the number of items displayed change the `4` to any number that doesn't exceed the amount of results from the API.
+* Line 22: `getRandomNumbers(4, jsonResponseLength);` To change the number of items displayed change the `4` to any number that doesn't exceed the amount of results from the API.
 
 
 ##### The code itself:
 
-{% highlight javascript linenos %} $(document).ready(function() {  $.getJSON( "https://archive.org/advancedsearch.php?q=subject%3A(%22Antislavery+movements+--+United+States%22)&fl[]=creator&fl[]=identifier&fl[]=title&fl[]=year&sort[]=&sort[]=&sort[]=&rows=400&page=1&output=json&callback=?", function(data) { console.log(data);   let jsonContents = data.response.docs; let jsonResponseLength = data.response.docs.length;
+{% highlight javascript linenos %} let APIS4LIBS_antislaverymovements = function(){$(document).ready(function() {  $.getJSON( "https://archive.org/advancedsearch.php?q=subject%3A(%22Antislavery+movements+--+United+States%22)&fl[]=creator&fl[]=identifier&fl[]=title&fl[]=year&sort[]=&sort[]=&sort[]=&rows=400&page=1&output=json&callback=?", function(data) { console.log(data);   let jsonContents = data.response.docs; let jsonResponseLength = data.response.docs.length;
 
     
     var getRandomNumbers = function(howMany, upperLimit) {
@@ -138,5 +138,5 @@ font-size: 1.1em;
   }
 );
 
-});
+});}();
 {% endhighlight %}
