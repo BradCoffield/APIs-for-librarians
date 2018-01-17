@@ -51,18 +51,30 @@ can modify the number of characters that are permitted to be displayed.
 * Line 5: I downloaded an animated gif spinner that will display while the API
   is working and before the results have loaded. You don't have to do this but
   it does give a visual cue to the user that something is happening behind the
-  scenes. {% highlight html linenos %} <div class="row" id="naropa-row"> <h3>The
-  Naropa Poetics Audio Archive</h3> <p>Three random pieces from the archive.
-  Want more? Reload this page or visit them at
-  <a href="https://archive.org/details/naropa">https://archive.org/details/naropa</a>
-    </p>
-    <!-- A spinner animated gif for while the ajax loads --><img src="/assets/img/Eclipse.gif" alt="" id="preloader" style="display:block;margin:0 auto;">
-    <!-- Our three random items --> <div class="col-md-4"> <ul id="naropa-1"></ul>
-    </div> <div class="col-md-4"> <ul id="naropa-2"></ul> </div>
-  <div class="col-md-4"> <ul id="naropa-3"></ul> </div>
-  </div>
-<p id="naropa-description">The Naropa University Archive Project is preserving and providing access to over 5000 hours of recordings made at Naropa University in Boulder, Colorado. The library was developed under the auspices of the Jack Kerouac School of Disembodied Poetics (the university's Department of Writing and Poetics) founded in 1974 by poets Anne Waldman and Allen Ginsberg. It contains readings, lectures, performances, seminars, panels and workshops conducted at Naropa by many of the leading figures of the U.S.literary avant-garde. <a href="https://archive.org/details/naropa&tab=about">More info...</a> </p>
+  scenes. 
+  
+  {% highlight html linenos %} <div class="row" id="naropa-row">
+  <p>Three random pieces from the archive. Want more? Reload this page or visit them at <a href="https://archive.org/details/naropa">https://archive.org/details/naropa</a></p>
+
+<p>&nbsp;</p>
+<!-- A spinner animated gif for while the ajax loads --><img alt="" id="preloader" src="https://libapps.s3.amazonaws.com/customers/399/images/Eclipse.gif" style="display:block;margin:0 auto;" />
+<div class="col-md-4">
+<ul id="naropa-1">
+</ul>
 </div>
+
+<div class="col-md-4">
+<ul id="naropa-2">
+</ul>
+</div>
+
+<div class="col-md-4">
+<ul id="naropa-3">
+</ul>
+</div>
+</div>
+
+<p id="naropa-description">The Naropa University Archive Project is preserving and providing access to over 5000 hours of recordings made at Naropa University in Boulder, Colorado. The library was developed under the auspices of the Jack Kerouac School of Disembodied Poetics (the university&#39;s Department of Writing and Poetics) founded in 1974 by poets Anne Waldman and Allen Ginsberg. It contains readings, lectures, performances, seminars, panels and workshops conducted at Naropa by many of the leading figures of the U.S.literary avant-garde. <a href="https://archive.org/details/naropa&amp;tab=about">More info...</a></p>
 
 {% endhighlight %}
 
@@ -96,19 +108,31 @@ text-align: center; margin-bottom: 1em; } #naropa-description { margin-top: 1em;
 
 ##### The code itself:
 
-{% highlight javascript linenos %} $(document).ready(function() {
+{% highlight javascript linenos %}
 
-/\*
 
-* jQuery Shorten plugin 1.1.0
-*
-* Copyright (c) 2014 Viral Patel
-* http://viralpatel.net
-*
-* Licensed under the MIT license:
-* http://www.opensource.org/licenses/mit-license.php \*/
+$(document).ready(function() {
+  /*
+ * jQuery Shorten plugin 1.1.0
+ *
+ * Copyright (c) 2014 Viral Patel
+ * http://viralpatel.net
+ *
+ * Licensed under the MIT license:
+ *   http://www.opensource.org/licenses/mit-license.php
+ */
 
-(function($) { $.fn.shorten = function(settings) { "use strict";
+  /*
+** updated by Jeff Richardson
+** Updated to use strict,
+** IE 7 has a "bug" It is returning undefined when trying to reference string characters in this format
+** content[i]. IE 7 allows content.charAt(i) This works fine in all modern browsers.
+** I've also added brackets where they weren't added just for readability (mostly for me).
+*/
+
+  (function($) {
+    $.fn.shorten = function(settings) {
+      "use strict";
 
       var config = {
         showChars: 250,
@@ -266,38 +290,58 @@ text-align: center; margin-bottom: 1em; } #naropa-description { margin-top: 1em;
         }
       });
     };
+  })(jQuery);
 
-})(jQuery);
-//returns a random number from a range function getRandomIntInclusive(min, max)
-{
-min = Math.ceil(min);
-max = Math.floor(max);
-return
-Math.floor(Math.random()\ \* (max - min + 1)) + min;
-} //allows our spinner to be
-seen $("#preloader").show();
-$.getJSON(
-"https://archive.org/advancedsearch.php?q=collection%3Anaropa+mediatype%3Aaudio++&fl[]=creator&fl[]=description&fl[]=identifier&fl[]=title&fl[]=year&sort[]=&sort[]=&sort[]=&rows=1000&page=1&output=json&callback=?",
-function (data) { //removes our spinner when the ajax request is being displayed
-$("#preloader").hide(); //selects three different random numbers from within our
-results set amount and ensures none of them match each other
-varnum1, num2,
-num3;
-vargetThreeRandom = function () {
-num1 = getRandomIntInclusive(0,
-data.response.docs.length);
-num2 = getRandomIntInclusive(0,
-data.response.docs.length);
-num3 = getRandomIntInclusive(0,
-data.response.docs.length);
-if (num1 == num2 || num2 == num3 || num1 == num3) {
-getThreeRandom();
-}
-};
-getThreeRandom(data);
-$("#naropa-1").append(`<li class="naropa-item-title"><a href="https://archive.org/details/${data .response.docs[num1].identifier}"> ${data.response.docs[num1] .title}</a></li> <li class="naropa-description">${data.response.docs[num1] .description}</li>`);
-$("#naropa-2").append(`<li class="naropa-item-title"><a href="https://archive.org/details/${data .response.docs[num2].identifier}"> ${data.response.docs[num2] .title}</a></li> <li class="naropa-description">${data.response.docs[num2] .description}</li>`);
-$("#naropa-3").append(`<li class="naropa-item-title"><a href="https://archive.org/details/${data .response.docs[num3].identifier}"> ${data.response.docs[num3] .title}</a></li> <li class="naropa-description">${data.response.docs[num3] .description}</li>`);
-$(".naropa-description").shorten();
+  //returns a random number from a range
+  function getRandomIntInclusive(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  //allows our spinner to be seen
+  $("#preloader").show();
+  $.getJSON(
+    "https://archive.org/advancedsearch.php?q=collection%3Anaropa+mediatype%3Aaudio++&fl[]=creator&fl[]=description&fl[]=identifier&fl[]=title&fl[]=year&sort[]=&sort[]=&sort[]=&rows=1000&page=1&output=json&callback=?",
+    function(data) {
+      //removes our spinner when the ajax request is being displayed
+      $("#preloader").hide();
+      //selects three different random numbers from within our results set amount and ensures none of them match each other
+      let num1, num2, num3;
+      let getThreeRandom = function() {
+        num1 = getRandomIntInclusive(0, data.response.docs.length);
+        num2 = getRandomIntInclusive(0, data.response.docs.length);
+        num3 = getRandomIntInclusive(0, data.response.docs.length);
+        if (num1 == num2 || num2 == num3 || num1 == num3) {
+          getThreeRandom();
+        }
+      };
+      getThreeRandom(data);
+      //these use our random numbers to select pieces from our data set and display them on our webpage. Uses font-awesome icon fonts
+      $("#naropa-1")
+        .append(`<li class="naropa-item-title"><a href="https://archive.org/details/${data
+        .response.docs[num1].identifier}"> ${data.response.docs[num1]
+        .title}</a></li>
+      <li class="naropa-description">${data.response.docs[num1]
+        .description}</li>
+`);
+      $("#naropa-2")
+        .append(`<li class="naropa-item-title"><a href="https://archive.org/details/${data
+        .response.docs[num2].identifier}"> ${data.response.docs[num2]
+        .title}</a></li>
+      <li class="naropa-description">${data.response.docs[num2]
+        .description}</li>
+`);
+      $("#naropa-3")
+        .append(`<li class="naropa-item-title"><a href="https://archive.org/details/${data
+        .response.docs[num3].identifier}"> ${data.response.docs[num3]
+        .title}</a></li>
+      <li class="naropa-description">${data.response.docs[num3]
+        .description}</li>
+`);
+      $(".naropa-description").shorten();
+    }
+  );
 });
-});{% endhighlight %}
+
+
+{% endhighlight %}
