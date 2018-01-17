@@ -30,9 +30,8 @@ Currently everything is displayed in one vertical column, book after book. It wo
 
 {:.code-notes}
 
-* Basically just our spinny preloader (which isn't essential) and the blank `<ul>` our JS will work with.
+* Just the blank `<ul>` our JS will work with.
   {% highlight html linenos %}
-  <img src="/assets/img/Eclipse.gif" alt="" id="preloader">
     <ul id="IA-princeton-theological"></ul>{% endhighlight %}
 
 #### CSS
@@ -80,15 +79,15 @@ margin: 0 auto;
 
 {% highlight javascript linenos %} $(document).ready(function() {
 //Show our spinny preloader
-document.getElementById("preloader").style.display = "";
+//document.getElementById("preloader").style.display = "";
 //Gets the data
 $.getJSON(
 "https://archive.org/advancedsearch.php?q=collection%3Aprinceton+mediatype%3Atexts&fl[]=creator&fl[]=description&fl[]=identifier&fl[]=publisher&fl[]=subject&fl[]=title&fl[]=volume&fl[]=year&sort[]=&sort[]=&sort[]=&rows=1000&page=1&output=json&callback=?",
 function(data) {
 //Removes our preloader
-document.getElementById("preloader").style.display = "none";
-varjsonContents = data.response.docs;
-varjsonResponseLength = data.response.docs.length;
+//document.getElementById("preloader").style.display = "none";
+var jsonContents = data.response.docs;
+var jsonResponseLength = data.response.docs.length;
 
       //This is the function to generate as many random numbers we want - with the amount of API results as the upper range.
       var getRandomNumbers = function(howMany, upperLimit) {
@@ -121,7 +120,7 @@ varjsonResponseLength = data.response.docs.length;
         }
       }
       for (i = 0; i < ourRandoms.length; i++) {
-        vartheBookStuff = `<li class=flexy-container><div class="left"><div class="pb-pic"><a href="https://archive.org/details/${
+        var theBookStuff = `<li class=flexy-container><div class="left"><div class="pb-pic"><a href="https://archive.org/details/${
           jsonContents[ourRandoms[i]].identifier
         }"><img src="https://archive.org/services/img/${
           jsonContents[ourRandoms[i]].identifier
@@ -141,7 +140,7 @@ varjsonResponseLength = data.response.docs.length;
       </div>
       </li>`;
 
-        varttttt = new PrincetonTheologicalBook(theBookStuff);
+        var ttttt = new PrincetonTheologicalBook(theBookStuff);
         ttttt.getToAppending();
       }
       //Check if any subjects are undefined and if so replace with custom text
