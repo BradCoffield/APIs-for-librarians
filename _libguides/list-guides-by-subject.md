@@ -23,8 +23,6 @@ Once that data is returned we pull out the individual title of a guide and its U
 
 You link up the jQuery and your actual HTML using a specific ID name in your HTML, assigned to a UL. If you wanted a variety of different such lists you would need to use that many different pieces of this code, with your subject identifiers in the JSON call and the HTML/JS linkup changed.
 
-
-
 ## The Code
 
 #### HTML
@@ -50,7 +48,7 @@ You link up the jQuery and your actual HTML using a specific ID name in your HTM
 
 {% highlight javascript linenos %}
 
-varapis4librarians_guidesBySubject = function(){$.getJSON('https://lgapi-us.libapps.com/1.1/guides?site_id=foo1&key=foo2&status=1&subject_ids=38607', function (result) {
+var apis4librarians_guidesBySubject = function(){$.getJSON('https://lgapi-us.libapps.com/1.1/guides?site_id=foo1&key=foo2&status=1&subject_ids=38607', function (result) {
 var businessGuides = $.map(result, function (guidesData, index) {
 var listItem = $('<li></li>');
 $('<a href=/"' + guidesData.url + '/">' + guidesData.name + '</a>').appendTo(listItem);

@@ -56,7 +56,7 @@ body{font-family: 'Martel'}
 
 ##### The code itself:
 
-{% highlight javascript linenos %}varapis4librarians_wordnikofdaySimple = function(){function reqListener() {
+{% highlight javascript linenos %}var apis4librarians_wordnikofdaySimple = function(){function reqListener() {
 vardata = JSON.parse(this.responseText);
 console.log(data);
 

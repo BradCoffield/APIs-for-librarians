@@ -77,7 +77,7 @@ max-width: 20em;
 ##### The code itself:
 
 {% highlight javascript linenos %}
-varapis4librarians_quotesdotnet = function(){$(document).ready(function() {
+var apis4librarians_quotesdotnet = function(){$(document).ready(function() {
 //converts XML to JSON
 function xmlToJson(xml) {
 var obj = {};

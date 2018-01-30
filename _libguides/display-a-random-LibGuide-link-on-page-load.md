@@ -68,7 +68,7 @@ Pressing the button will re-run everything and display a new link.
 ##### The code itself:
 
 {% highlight javascript linenos %}
-varapis4librarians_randomLibguide = function(){$(document).ready(function () {
+var apis4librarians_randomLibguide = function(){$(document).ready(function () {
 var getRandomGuide = function () {
 $.getJSON('https://lgapi-us.libapps.com/1.1/guides?site_id=foo1&key=foo2&status=1', function (result) {
 var entry = result[Math.floor(Math.random() * result.length)];
