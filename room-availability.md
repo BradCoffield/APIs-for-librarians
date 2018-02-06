@@ -3,6 +3,10 @@ layout: implementations
 title: "Room Availability"
 author: "Brad Coffield"
 author_email: "bcoffield@gmail.com"
+tags:
+- javascript
+- jquery
+- requires-auth-server
 ---
 
 ## Description
@@ -15,6 +19,7 @@ This will
 
 ### More details
 
+{:.auth-server-promo}
 ~~~Works with -----**APIs for Librarians: Springshare Auth Server**~~~
 
 The API call, which is written in jQuery,

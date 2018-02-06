@@ -3,6 +3,10 @@ layout: implementations
 title: "Upcoming Events"
 author: "Brad Coffield"
 author_email: "bcoffield@gmail.com"
+tags:
+- javascript
+- jquery
+- requires-auth-server
 ---
 
 ## Description
@@ -12,9 +16,11 @@ This will
 ### Screenshot
 
 ![{{page.title}} screenshot]({{site.baseurl}}/assets/{{page.title}}-screenshot.jpg){:.screenshot}
+![{{page.title}} screenshot]({{site.baseurl}}/assets/{{page.title}}-screenshot2.jpg){:.screenshot}
 
 ### More details
 
+{:.auth-server-promo}
 ~~~Works with -----**APIs for Librarians: Springshare Auth Server**~~~
 
 The API call, which is written in jQuery,
