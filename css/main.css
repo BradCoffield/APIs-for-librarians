@@ -84,7 +84,7 @@ h1#site-title span a {
 }
 
 h3 {
-    margin: 15px 0 !important;
+    margin: 24px 0 12px !important;
 }
 
 .service-titles {
@@ -159,15 +159,17 @@ h6 {
 
 }
 
+p {margin:10px 1rem}
 p,
 ul,
 li {
     font-family: 'Martel', serif;
 }
+.small-ul{font-size:.9rem;}
 
 h2 {
     font-size: 40px;
-    font-size: 2.5rem;
+    font-size: 2.1rem;
     border-left: 5px solid teal;
     padding-left: .4em;
 }
@@ -175,8 +177,7 @@ h2 {
 h3 {
     font-size: 32px;
     font-size: 2.0rem;
-    border-left: 3px solid teal;
-    border-bottom:3px solid teal;
+    border-left: 1px solid teal;
     padding-left: .4em;
 }
 
@@ -184,6 +185,7 @@ h4 {
     font-size: 28px;
     font-size: 1.75rem;
     padding-left: .4em;
+    margin-bottom: 0px;
 }
 
 h5 {
@@ -233,6 +235,7 @@ li {
 
 .screenshot {
     border: 2px dotted gray;
+ 
 }
 
 
