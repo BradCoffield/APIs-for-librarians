@@ -3,9 +3,7 @@ layout: default
 title: 'APIs for Librarians' 
 ---
 
-
-
-
+<div id="homepage">
 <div class="row">
     <div class="medium-12 columns">
         <h2>Introduction</h2>
@@ -109,6 +107,37 @@ title: 'APIs for Librarians'
     </div>
 
 </div>
+<div class="row margin-top-1">
+    <div class="small-12 columns">
+        <h3>
+            Google
+        </h3>
+    </div>
+
+    <div class="small-12 columns service-container-new">
+        <div class="small-12 medium-4 columns">
+            <h4 class="post-side-title">Google Calendar
+
+            </h4>
+        </div>
+        <div class="small-12 medium-8 columns service-list-wrapper">
+            <ul class="custom-dots">
+                {% for page in site.google %} {% if page.tags contains "google-calendar" %}
+                <li>
+                    <a href="{{site.baseurl}}{{ page.url}}">{{page.title}}</a>
+                </li>
+                {%endif%} {% endfor %}
+            </ul>
+
+
+        </div>
+</div>
+
+</div>
+
+
+
+
 
 <div class="row margin-top-1">
     <div class="small-12 columns">
@@ -226,4 +255,4 @@ title: 'APIs for Librarians'
 
         </div>
 
-    </div></div>
+    </div></div></div>
