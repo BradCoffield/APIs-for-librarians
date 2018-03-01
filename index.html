@@ -9,7 +9,7 @@ title: 'APIs for Librarians'
         <h2>Introduction</h2>
         <p>The goal of this site is to help librarians (coders and non-coders alike) quickly and easily make their web presences
             stronger by tapping into the wonderful world of APIs. There's a staggering amount of useful data offered to the
-            world through APIs - whether it be from Springshare, OCLC, Twitter, weather services, or many more. With some
+            world through APIs - whether it be from Springshare, OCLC, The Internet Archive, DPLA, weather services, or many others. With some
             code you can pull, manipulate, and display useful data for your users.</p>
 
         <p>This site is geared towards librarians who aren't web developers but who would like to enhance their LibGuides or
@@ -45,7 +45,7 @@ title: 'APIs for Librarians'
         <div class="small-12 medium-8 columns service-list-wrapper">
             <ul class="custom-dots">
                 {% for libguide in site.libguides %}
-                <li>
+                <li class="{{libguide.tags|join:' '}}">  
                     <a href="{{site.baseurl}}{{ libguide.url}}">{{libguide.title}}</a>
                 </li>
                 {% endfor %}
@@ -62,7 +62,7 @@ title: 'APIs for Librarians'
             <ul class="custom-dots">
                 {% for libcals in site.libcal %}
                 <li>
-                    <a href="{{site.baseurl}}{{ libcals.url}}">{{libcals.title}}</a>
+                    <a href="{{site.baseurl}}{{ libcals.url}}" >{{libcals.title}}</a>
                 </li>
                 {% endfor %}
 
