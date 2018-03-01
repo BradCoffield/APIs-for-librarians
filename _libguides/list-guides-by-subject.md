@@ -3,6 +3,10 @@ layout: implementations
 title: 'List Guides by Subject'
 author: "Brad Coffield"
 author_email: "bcoffield@gmail.com"
+#tags:
+#- javascript
+#- jquery
+#- client-side
 ---
 
 ## Description

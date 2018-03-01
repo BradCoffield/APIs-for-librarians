@@ -3,11 +3,7 @@ layout: implementations
 title: "Suggest Random Database"
 author: "Brad Coffield"
 author_email: "bcoffield@gmail.com"
-tags:
-- javascript
-- jquery
-- requires-springshare-auth-server
-- client-side
+tags: javascript jquery requires-springshare-auth-server client-side
 ---
 
 ## Description

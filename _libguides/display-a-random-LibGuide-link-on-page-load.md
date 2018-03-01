@@ -3,6 +3,10 @@ layout: implementations
 title: 'Display a Random LibGuide Link on Page Load'
 author: "Brad Coffield"
 author_email: "bcoffield@gmail.com"
+#tags:
+#- javascript
+#- jquery
+#- client-side
 ---
 
 ## Description
