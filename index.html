@@ -139,50 +139,7 @@ title: 'APIs for Librarians'
 
 
 
-<div class="row margin-top-1">
-    <div class="small-12 columns">
-        <h3>
-            Quotes
-        </h3>
-    </div>
-    <!-- <div class="small-12 columns service-container-new">
-        <div class="small-12 medium-4 columns">
-            <h4 class="post-side-title">Quotes.net</h4>
-        </div>
-        <div class="small-12 medium-8 columns">
-            <ul class="custom-dots">
 
-                {% for page in site.quotes %}
-                {% if page.tags contains "quotesnet" %}
-                <li style="list-style-type: none;">
-                    <a href="{{site.baseurl}}{{ page.url}}">{{page.title}}</a>
-                </li>
-                {%endif%} {% endfor %}
-
-
-
-            </ul>
-        </div>
-
-    </div> -->
-    <div class="small-12 columns service-container-new">
-        <div class="small-12 medium-4 columns">
-            <h4 class="post-side-title">Quotes on Design
-
-            </h4>
-        </div>
-        <div class="small-12 medium-8 columns service-list-wrapper">
-            <ul class="custom-dots">
-                {% for page in site.quotes %} {% if page.tags contains "quotesdesign" %}
-                <li>
-                    <a href="{{site.baseurl}}{{ page.url}}">{{page.title}}</a>
-                </li>
-                {%endif%} {% endfor %}
-            </ul>
-
-
-        </div>
-</div>
 
 
 <div class="row margin-top-1">
@@ -230,7 +187,51 @@ title: 'APIs for Librarians'
 
     </div>
 </div>
+<div class="row margin-top-1">
+    <div class="small-12 columns">
+        <h3>
+            Quotes
+        </h3>
+    </div>
+    <!-- <div class="small-12 columns service-container-new">
+        <div class="small-12 medium-4 columns">
+            <h4 class="post-side-title">Quotes.net</h4>
+        </div>
+        <div class="small-12 medium-8 columns">
+            <ul class="custom-dots">
 
+                {% for page in site.quotes %}
+                {% if page.tags contains "quotesnet" %}
+                <li style="list-style-type: none;">
+                    <a href="{{site.baseurl}}{{ page.url}}">{{page.title}}</a>
+                </li>
+                {%endif%} {% endfor %}
+
+
+
+            </ul>
+        </div>
+
+    </div> -->
+    <div class="small-12 columns service-container-new">
+        <div class="small-12 medium-4 columns">
+            <h4 class="post-side-title">Quotes on Design
+
+            </h4>
+        </div>
+        <div class="small-12 medium-8 columns service-list-wrapper">
+            <ul class="custom-dots">
+                {% for page in site.quotes %} {% if page.tags contains "quotesdesign" %}
+                <li>
+                    <a href="{{site.baseurl}}{{ page.url}}">{{page.title}}</a>
+                </li>
+                {%endif%} {% endfor %}
+            </ul>
+
+
+        </div>
+</div>
+</div>
 <div class="row margin-top-1">
     <div class="small-12 columns">
         <h3>
