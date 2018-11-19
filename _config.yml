@@ -26,5 +26,7 @@ collections:
     output: true
   google:
     output: true
+  contentDM:
+    output: true
 
         
