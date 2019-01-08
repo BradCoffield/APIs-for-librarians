@@ -32,7 +32,7 @@ A few things to know. First, you need to have your hours properly setup inside L
 {% highlight html linenos %}
 
 <div id="todays-hours"></div>
-<input type="button" id="btn" value="Click" />
+
 {% endhighlight %}
 
 #### CSS
