@@ -28,5 +28,7 @@ collections:
     output: true
   contentDM:
     output: true
+  exlibris:
+    output: true
 
         
