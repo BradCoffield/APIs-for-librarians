@@ -91,6 +91,7 @@ Access permissions: check **make available to public** box
 - Line 16: You'll find your calendar address in the settings of the google calendar. It looks like an email address and follows the phrase **Calendar ID**.
 - Line 17: The API key is supplied by the Google Developers Console API Manager. You will need to create a new credential for this project, and this is free to do. See [Creating a Google API Key](https://docs.simplecalendar.io/google-api-key/) for step-by-step instructions.
 - Line 21: The time frame is set to read your google calendar from 1 am - 11:59 pm. I had trouble with all-day events showing up on the next day when I used the 0:00:00-23:59:59 time code, so I tweaked it. Our library is never open past 7pm, so I've never tested a time frame that extends to the next day. YMMV.
+- Line 21: `T01:00:00-04:00` and `T23:59:59-04:00` ... The `04` in them refers to your local timezone by way of UTC offset. MST, for example, is -7 and therefore the `04` should be `07`. [UTC Offsets, Wikipedia](https://en.wikipedia.org/wiki/List_of_UTC_time_offsets)
 
 {% highlight javascript linenos %}
   //====set up date/time variables (moments.js)
