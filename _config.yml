@@ -1,5 +1,5 @@
-url: https://www.bradcoffield.com
-baseurl: /APIs-for-librarians
+url: https://www.apis4librarians.com
+baseurl: https://www.apis4librarians.com
 exclude: ['readme.md', 'license']
 title: 'APIs for Librarians'
 author: 'Brad Coffield'
