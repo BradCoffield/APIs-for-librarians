@@ -1,45 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <title>{{page.title}}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-         
-    <link rel="stylesheet" href="{{site.baseurl}}/assets/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{{site.baseurl}}/css/customfoundation.min.css">
-    <link href="{{site.baseurl}}/css/main.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{site.baseurl}}/css/syntax.css">
-  <link href="https://fonts.googleapis.com/css?family=Dosis:300|Martel:300" rel="stylesheet"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    
+    <link
+      rel="stylesheet"
+      href="{{site.baseurl}}/assets/font-awesome-4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{site.baseurl}}/css/customfoundation.min.css"
+    />
+    <link href="{{site.baseurl}}/css/main.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{site.baseurl}}/css/syntax.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Dosis:300|Martel:300"
+      rel="stylesheet"
+    />
 
-<!-- {%include google-analytics.html%} -->
+    <!-- {%include google-analytics.html%} -->
+  </head>
 
-
-</head>
-
-<body>
-    {% include header.html %}
- {%include goat-analytics.html%}
+  <body>
+    {% include header.html %} {%include goat-analytics.html%}
 
     <div class="row">
-        <div class="medium-12 columns"> <h2 class="post-side-title">{{page.title}}</h2> <br> 
-        </div>
+      <div class="medium-12 columns">
+        <h2 class="post-side-title">{{page.title}}</h2>
+        <br />
+      </div>
     </div>
     <div class="row">
-        <div class="small-12 columns">{{content}}</div>
+      <div class="small-12 columns">{{content}}</div>
     </div>
-    
-
-
-
-
-
-
 
     {% include footer.html %}
-
-</body>
-
+    <!-- Cloudflare Web Analytics -->
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token": "873f0a7e90d74f5bbaca7e7ed9ea63ac"}'
+    ></script>
+    <!-- End Cloudflare Web Analytics -->
+  </body>
 </html>
